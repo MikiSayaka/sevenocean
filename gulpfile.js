@@ -1,4 +1,4 @@
-var gulp = require('gulp');                                                                                                                                                     
+var gulp = require('gulp');
 var install = require('gulp-install');
 var runSequence = require('run-sequence');
 var rimraf = require('rimraf');
@@ -60,6 +60,7 @@ gulp.task('clean', function() {
   rimraf(js_dest_path, function(){});
   rimraf(css_dest_path, function(){});
 });
+
 gulp.task('minify', function(){
   console.log('Run process!!');
   runSequence('less', 'minifyJs', 'minifyCss', 'clean');
