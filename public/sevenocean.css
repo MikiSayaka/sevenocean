@@ -3,3 +3,8 @@
   margin-bottom: 0;
 }
 /*}}}*/
+/*{{{ 基本樣式調整  */
+#page-wrapper {
+  min-height: 100vh;
+}
+/*}}}*/

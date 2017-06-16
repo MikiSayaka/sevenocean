@@ -8,6 +8,7 @@ var ejs = require('ejs');
 
 var routes = require('./routes/index');
 var onHire = require('./routes/onHire');
+var releaseToShipper = require('./routes/releaseToShipper');
 
 var app = express();
 
@@ -24,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/onHire', onHire);
+app.use('/releaseToShipper', releaseToShipper);
 
 //  catch 404 and forward to error handler
 app.use(function(req, res, next) {
