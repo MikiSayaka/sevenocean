@@ -75,12 +75,12 @@
       <div id="page-wrapper">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <h1 class="page-header">RELEASE TO SHIPPER</h1>
+            <h1 class="page-header">RETRUN TO SHIPPER</h1>
           </div>
         </div>
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <form class="form-horizontal" id="releaseToShipperForm" name="releaseToShipperForm">
+            <form class="form-horizontal" id="returnToShipperForm" name="returnToShipperForm">
               <!--{{{-->
               <div class="row">
                 <div class="form-group col-lg-6">
@@ -100,13 +100,13 @@
               <!--{{{-->
               <div class="row">
                 <div class="form-group col-lg-6">
-                  <label for="container_no" class="col-lg-4 control-label">TRANSACTION TIME：</label>
+                  <label for="full_empty" class="col-lg-4 control-label">FULL / EMPTY：</label>
                   <div class="col-lg-4">
-                    <input type="text" id="transaction_time" name="transaction_time" class="form-control" placeholder="TRANSACTION TIME">
+                    <input type="text" id="full_empty" name="full_empty" class="form-control" placeholder="FULL / EMPTY">
                   </div>
                 </div>
                 <div class="form-group col-lg-6 col-lg-pull-2">
-                  <label for="type" class="col-lg-4 control-label">LOADING PORT：</label>
+                  <label for="loading_port" class="col-lg-4 control-label">LOADING PORT：</label>
                   <div class="col-lg-4">
                     <input type="text" id="loading_port" name="loading_port" class="form-control" placeholder="LOADING PORT">
                   </div>
@@ -116,9 +116,9 @@
               <!--{{{-->
               <div class="row">
                 <div class="form-group col-lg-6">
-                  <label for="container_no" class="col-lg-4 control-label">DEPOT：</label>
+                  <label for="transaction_time" class="col-lg-4 control-label">TRANSACTION TIME：</label>
                   <div class="col-lg-4">
-                    <input type="text" id="depot" name="depot" class="form-control" placeholder="DEPOT">
+                    <input type="text" id="transaction_time" name="transaction_time" class="form-control" placeholder="TRANSACTION TIME">
                   </div>
                 </div>
               </div>
@@ -126,7 +126,7 @@
               <!--{{{-->
               <div class="row">
                 <div class="form-group col-lg-6">
-                  <label for="container_no" class="col-lg-4 control-label">SHIPPER：</label>
+                  <label for="shipper" class="col-lg-4 control-label">SHIPPER：</label>
                   <div class="col-lg-4">
                     <input type="text" id="shipper" name="shipper" class="form-control" placeholder="SHIPPER">
                   </div>
@@ -136,7 +136,7 @@
               <!--{{{-->
               <div class="row">
                 <div class="form-group col-lg-6">
-                  <label for="container_no" class="col-lg-4 control-label">FORWARDEF：</label>
+                  <label for="forwardef" class="col-lg-4 control-label">FORWARDEF：</label>
                   <div class="col-lg-4">
                     <input type="text" id="forwardef" name="forwardef" class="form-control" placeholder="FORWARDEF">
                   </div>
@@ -146,7 +146,7 @@
               <!--{{{-->
               <div class="row">
                 <div class="form-group col-lg-6">
-                  <label for="container_no" class="col-lg-4 control-label">BOOKING REF. NO：</label>
+                  <label for="booking_ref_no" class="col-lg-4 control-label">BOOKING REF. NO：</label>
                   <div class="col-lg-4">
                     <input type="text" id="booking_ref_no" name="booking_ref_no" class="form-control" placeholder="BOOKING REF. NO">
                   </div>
@@ -156,9 +156,9 @@
               <!--{{{-->
               <div class="row">
                 <div class="form-group col-lg-6">
-                  <label for="container_no" class="col-lg-4 control-label">HAULER CO.：</label>
+                  <label for="seal_no" class="col-lg-4 control-label">SEAL NO.：</label>
                   <div class="col-lg-4">
-                    <input type="text" id="hauler_co" name="hauler_co" class="form-control" placeholder="HAULER CO.">
+                    <input type="text" id="seal_no" name="seal_co" class="form-control" placeholder="SEAL NO.">
                   </div>
                 </div>
               </div>
@@ -166,9 +166,15 @@
               <!--{{{-->
               <div class="row">
                 <div class="form-group col-lg-6">
-                  <label for="container_no" class="col-lg-4 control-label">RELEASE REF NO.：</label>
+                  <label for="owner_type" class="col-lg-4 control-label">OWNER TYPE：</label>
                   <div class="col-lg-4">
-                    <input type="text" id="release_ref_no" name="release_ref_no" class="form-control" placeholder="RELEASE REF NO.">
+                    <input type="text" id="owner_type" name="owner_type" class="form-control" placeholder="OWNER TYPE">
+                  </div>
+                </div>
+                <div class="form-group col-lg-6 col-lg-pull-2">
+                  <label for="physical_status" class="col-lg-4 control-label">PHYSICAL STATUS：</label>
+                  <div class="col-lg-4">
+                    <input type="text" id="physical_status" name="physical_status" class="form-control" placeholder="PHYSICAL STATUS">
                   </div>
                 </div>
               </div>
