@@ -10,6 +10,7 @@ var routes = require('./routes/index');
 var onHire = require('./routes/onHire');
 var releaseToShipper = require('./routes/releaseToShipper');
 var returnToShipper = require('./routes/returnToShipper');
+var loadOnBoard = require('./routes/loadOnBoard');
 
 var app = express();
 
@@ -28,6 +29,7 @@ app.use('/', routes);
 app.use('/onHire', onHire);
 app.use('/releaseToShipper', releaseToShipper);
 app.use('/returnToShipper', returnToShipper);
+app.use('/loadOnBoard', loadOnBoard);
 
 //  catch 404 and forward to error handler
 app.use(function(req, res, next) {
