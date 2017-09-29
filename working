@@ -2,9 +2,10 @@ let SessionLoad = 1
 if &cp | set nocp | endif
 let s:cpo_save=&cpo
 set cpo&vim
+inoremap <silent> <SNR>25_AutoPairsReturn =AutoPairsReturn()
 imap <S-Tab> <Plug>snipMateBack
 inoremap <silent> <Plug>NERDCommenterInInsert  <BS>:call NERDComment(0, "insert")
-inoremap <silent> <SNR>25_AutoPairsReturn =AutoPairsReturn()
+inoremap <silent> <SNR>43_AutoPairsReturn =AutoPairsReturn()
 inoremap <silent> <Plug>snipMateShow =snipMate#ShowAvailableSnips()
 inoremap <silent> <Plug>snipMateBack =snipMate#BackwardsSnippet()
 inoremap <silent> <Plug>snipMateTrigger =snipMate#TriggerSnippet(1)
@@ -36,8 +37,10 @@ vmap \c  <Plug>NERDCommenterToggle
 nmap \c  <Plug>NERDCommenterToggle
 vmap \cc <Plug>NERDCommenterComment
 nmap \cc <Plug>NERDCommenterComment
+vmap gx <Plug>NetrwBrowseXVis
 nmap gx <Plug>NetrwBrowseX
 smap <S-Tab> <Plug>snipMateBack
+vnoremap <silent> <Plug>NetrwBrowseXVis :call netrw#BrowseXVis()
 nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>"),0)
 nmap <silent> <Plug>NERDCommenterAppend :call NERDComment(0, "append")
 nnoremap <silent> <Plug>NERDCommenterToEOL :call NERDComment(0, "toEOL")
@@ -88,7 +91,7 @@ set window=47
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd /srv/workspace/sevenocean
+cd /srv/working/sevenocean
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -122,7 +125,14 @@ badd +1 views/pages/releaseToShipper.ejs
 badd +10 routes/releaseToShipper.js
 badd +1 public/lib.min.js
 badd +1 node_modules/startbootstrap-sb-admin-2-gh-pages/js/sb-admin-2.js
+<<<<<<< HEAD
 args app.js
+=======
+argglobal
+silent! argdel *
+argadd app.js
+set stal=2
+>>>>>>> e5977da03749abd3a2cb51eb557ead9ccd795692
 edit app.js
 set splitbelow splitright
 set nosplitbelow
@@ -155,7 +165,10 @@ unlet s:cpo_save
 setlocal keymap=
 setlocal noarabic
 setlocal noautoindent
+setlocal backupcopy=
 setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
 setlocal bufhidden=
 setlocal buflisted
 setlocal buftype=
@@ -185,6 +198,7 @@ setlocal expandtab
 if &filetype != 'javascript'
 setlocal filetype=javascript
 endif
+setlocal fixendofline
 setlocal foldcolumn=0
 setlocal foldenable
 setlocal foldexpr=0
@@ -211,6 +225,7 @@ setlocal iskeyword=@,48-57,_,192-255
 setlocal keywordprg=
 setlocal nolinebreak
 setlocal nolisp
+setlocal lispwords=
 setlocal nolist
 setlocal makeprg=
 setlocal matchpairs=(:),{:},[:]
@@ -246,15 +261,21 @@ if &syntax != 'javascript'
 setlocal syntax=javascript
 endif
 setlocal tabstop=2
+setlocal tagcase=
 setlocal tags=
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile
+setlocal undolevels=-123456
 setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
+<<<<<<< HEAD
 let s:l = 1 - ((0 * winheight(0) + 22) / 45)
+=======
+let s:l = 1 - ((0 * winheight(0) + 30) / 61)
+>>>>>>> e5977da03749abd3a2cb51eb557ead9ccd795692
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -292,7 +313,10 @@ unlet s:cpo_save
 setlocal keymap=
 setlocal noarabic
 setlocal noautoindent
+setlocal backupcopy=
 setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
 setlocal bufhidden=
 setlocal buflisted
 setlocal buftype=
@@ -322,6 +346,7 @@ setlocal expandtab
 if &filetype != 'javascript'
 setlocal filetype=javascript
 endif
+setlocal fixendofline
 setlocal foldcolumn=0
 setlocal foldenable
 setlocal foldexpr=0
@@ -348,6 +373,7 @@ setlocal iskeyword=@,48-57,_,192-255
 setlocal keywordprg=
 setlocal nolinebreak
 setlocal nolisp
+setlocal lispwords=
 setlocal nolist
 setlocal makeprg=
 setlocal matchpairs=(:),{:},[:]
@@ -383,15 +409,17 @@ if &syntax != 'javascript'
 setlocal syntax=javascript
 endif
 setlocal tabstop=2
+setlocal tagcase=
 setlocal tags=
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile
+setlocal undolevels=-123456
 setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 49 - ((0 * winheight(0) + 22) / 44)
+let s:l = 49 - ((0 * winheight(0) + 30) / 60)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -429,7 +457,10 @@ unlet s:cpo_save
 setlocal keymap=
 setlocal noarabic
 setlocal noautoindent
+setlocal backupcopy=
 setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
 setlocal bufhidden=
 setlocal buflisted
 setlocal buftype=
@@ -459,6 +490,7 @@ setlocal expandtab
 if &filetype != 'javascript'
 setlocal filetype=javascript
 endif
+setlocal fixendofline
 setlocal foldcolumn=0
 setlocal foldenable
 setlocal foldexpr=0
@@ -485,6 +517,7 @@ setlocal iskeyword=@,48-57,_,192-255
 setlocal keywordprg=
 setlocal nolinebreak
 setlocal nolisp
+setlocal lispwords=
 setlocal nolist
 setlocal makeprg=
 setlocal matchpairs=(:),{:},[:]
@@ -520,15 +553,21 @@ if &syntax != 'javascript'
 setlocal syntax=javascript
 endif
 setlocal tabstop=2
+setlocal tagcase=
 setlocal tags=
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile
+setlocal undolevels=-123456
 setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
+<<<<<<< HEAD
 let s:l = 1 - ((0 * winheight(0) + 23) / 46)
+=======
+let s:l = 35 - ((34 * winheight(0) + 30) / 60)
+>>>>>>> e5977da03749abd3a2cb51eb557ead9ccd795692
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -566,7 +605,10 @@ unlet s:cpo_save
 setlocal keymap=
 setlocal noarabic
 setlocal noautoindent
+setlocal backupcopy=
 setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
 setlocal bufhidden=
 setlocal buflisted
 setlocal buftype=
@@ -596,6 +638,7 @@ setlocal expandtab
 if &filetype != 'less'
 setlocal filetype=less
 endif
+setlocal fixendofline
 setlocal foldcolumn=0
 setlocal foldenable
 setlocal foldexpr=0
@@ -622,6 +665,7 @@ setlocal iskeyword=@,48-57,_,192-255,-
 setlocal keywordprg=
 setlocal nolinebreak
 setlocal nolisp
+setlocal lispwords=
 setlocal nolist
 setlocal makeprg=
 setlocal matchpairs=(:),{:},[:]
@@ -657,15 +701,17 @@ if &syntax != 'less'
 setlocal syntax=less
 endif
 setlocal tabstop=2
+setlocal tagcase=
 setlocal tags=
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile
+setlocal undolevels=-123456
 setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 4 - ((3 * winheight(0) + 22) / 44)
+let s:l = 4 - ((3 * winheight(0) + 30) / 60)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -703,7 +749,10 @@ unlet s:cpo_save
 setlocal keymap=
 setlocal noarabic
 setlocal noautoindent
+setlocal backupcopy=
 setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
 setlocal bufhidden=
 setlocal buflisted
 setlocal buftype=
@@ -733,6 +782,7 @@ setlocal expandtab
 if &filetype != ''
 setlocal filetype=
 endif
+setlocal fixendofline
 setlocal foldcolumn=0
 setlocal foldenable
 setlocal foldexpr=0
@@ -759,6 +809,7 @@ setlocal iskeyword=@,48-57,_,192-255
 setlocal keywordprg=
 setlocal nolinebreak
 setlocal nolisp
+setlocal lispwords=
 setlocal nolist
 setlocal makeprg=
 setlocal matchpairs=(:),{:},[:]
@@ -794,15 +845,17 @@ if &syntax != 'html'
 setlocal syntax=html
 endif
 setlocal tabstop=2
+setlocal tagcase=
 setlocal tags=
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile
+setlocal undolevels=-123456
 setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 11 - ((10 * winheight(0) + 22) / 44)
+let s:l = 11 - ((10 * winheight(0) + 30) / 60)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -840,7 +893,10 @@ unlet s:cpo_save
 setlocal keymap=
 setlocal noarabic
 setlocal noautoindent
+setlocal backupcopy=
 setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
 setlocal bufhidden=
 setlocal buflisted
 setlocal buftype=
@@ -870,6 +926,7 @@ setlocal expandtab
 if &filetype != ''
 setlocal filetype=
 endif
+setlocal fixendofline
 setlocal foldcolumn=0
 setlocal foldenable
 setlocal foldexpr=0
@@ -896,6 +953,7 @@ setlocal iskeyword=@,48-57,_,192-255
 setlocal keywordprg=
 setlocal nolinebreak
 setlocal nolisp
+setlocal lispwords=
 setlocal nolist
 setlocal makeprg=
 setlocal matchpairs=(:),{:},[:]
@@ -931,15 +989,17 @@ if &syntax != 'html'
 setlocal syntax=html
 endif
 setlocal tabstop=2
+setlocal tagcase=
 setlocal tags=
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile
+setlocal undolevels=-123456
 setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 23 - ((22 * winheight(0) + 22) / 44)
+let s:l = 23 - ((22 * winheight(0) + 30) / 60)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -977,7 +1037,10 @@ unlet s:cpo_save
 setlocal keymap=
 setlocal noarabic
 setlocal noautoindent
+setlocal backupcopy=
 setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
 setlocal bufhidden=
 setlocal buflisted
 setlocal buftype=
@@ -1007,6 +1070,7 @@ setlocal expandtab
 if &filetype != 'mason'
 setlocal filetype=mason
 endif
+setlocal fixendofline
 setlocal foldcolumn=0
 setlocal foldenable
 setlocal foldexpr=0
@@ -1033,6 +1097,7 @@ setlocal iskeyword=@,48-57,_,192-255
 setlocal keywordprg=
 setlocal nolinebreak
 setlocal nolisp
+setlocal lispwords=
 setlocal nolist
 setlocal makeprg=
 setlocal matchpairs=(:),{:},[:]
@@ -1068,15 +1133,17 @@ if &syntax != 'html'
 setlocal syntax=html
 endif
 setlocal tabstop=2
+setlocal tagcase=
 setlocal tags=
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile
+setlocal undolevels=-123456
 setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 73 - ((72 * winheight(0) + 22) / 44)
+let s:l = 73 - ((72 * winheight(0) + 30) / 60)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -1114,7 +1181,10 @@ unlet s:cpo_save
 setlocal keymap=
 setlocal noarabic
 setlocal noautoindent
+setlocal backupcopy=
 setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
 setlocal bufhidden=
 setlocal buflisted
 setlocal buftype=
@@ -1144,6 +1214,7 @@ setlocal expandtab
 if &filetype != 'mason'
 setlocal filetype=mason
 endif
+setlocal fixendofline
 setlocal foldcolumn=0
 setlocal foldenable
 setlocal foldexpr=0
@@ -1170,6 +1241,7 @@ setlocal iskeyword=@,48-57,_,192-255
 setlocal keywordprg=
 setlocal nolinebreak
 setlocal nolisp
+setlocal lispwords=
 setlocal nolist
 setlocal makeprg=
 setlocal matchpairs=(:),{:},[:]
@@ -1205,17 +1277,23 @@ if &syntax != 'html'
 setlocal syntax=html
 endif
 setlocal tabstop=2
+setlocal tagcase=
 setlocal tags=
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile
+setlocal undolevels=-123456
 setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
 156
 normal! zo
+<<<<<<< HEAD
 let s:l = 4 - ((0 * winheight(0) + 22) / 44)
+=======
+let s:l = 4 - ((0 * winheight(0) + 30) / 60)
+>>>>>>> e5977da03749abd3a2cb51eb557ead9ccd795692
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -1253,7 +1331,10 @@ unlet s:cpo_save
 setlocal keymap=
 setlocal noarabic
 setlocal noautoindent
+setlocal backupcopy=
 setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
 setlocal bufhidden=
 setlocal buflisted
 setlocal buftype=
@@ -1283,6 +1364,7 @@ setlocal expandtab
 if &filetype != 'mason'
 setlocal filetype=mason
 endif
+setlocal fixendofline
 setlocal foldcolumn=0
 setlocal foldenable
 setlocal foldexpr=0
@@ -1309,6 +1391,7 @@ setlocal iskeyword=@,48-57,_,192-255
 setlocal keywordprg=
 setlocal nolinebreak
 setlocal nolisp
+setlocal lispwords=
 setlocal nolist
 setlocal makeprg=
 setlocal matchpairs=(:),{:},[:]
@@ -1344,20 +1427,31 @@ if &syntax != 'html'
 setlocal syntax=html
 endif
 setlocal tabstop=2
+setlocal tagcase=
 setlocal tags=
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile
+setlocal undolevels=-123456
 setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
+<<<<<<< HEAD
 let s:l = 76 - ((70 * winheight(0) + 22) / 44)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 76
 normal! 0
+=======
+let s:l = 116 - ((115 * winheight(0) + 30) / 60)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+116
+normal! 01|
+>>>>>>> e5977da03749abd3a2cb51eb557ead9ccd795692
 tabedit views/pages/common/foot-include.ejs
 set splitbelow splitright
 set nosplitbelow
@@ -1390,7 +1484,10 @@ unlet s:cpo_save
 setlocal keymap=
 setlocal noarabic
 setlocal noautoindent
+setlocal backupcopy=
 setlocal nobinary
+setlocal nobreakindent
+setlocal breakindentopt=
 setlocal bufhidden=
 setlocal buflisted
 setlocal buftype=
@@ -1420,6 +1517,7 @@ setlocal expandtab
 if &filetype != ''
 setlocal filetype=
 endif
+setlocal fixendofline
 setlocal foldcolumn=0
 setlocal foldenable
 setlocal foldexpr=0
@@ -1446,6 +1544,7 @@ setlocal iskeyword=@,48-57,_,192-255
 setlocal keywordprg=
 setlocal nolinebreak
 setlocal nolisp
+setlocal lispwords=
 setlocal nolist
 setlocal makeprg=
 setlocal matchpairs=(:),{:},[:]
@@ -1481,21 +1580,28 @@ if &syntax != 'html'
 setlocal syntax=html
 endif
 setlocal tabstop=2
+setlocal tagcase=
 setlocal tags=
 setlocal textwidth=0
 setlocal thesaurus=
 setlocal noundofile
+setlocal undolevels=-123456
 setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 2 - ((1 * winheight(0) + 22) / 44)
+let s:l = 2 - ((1 * winheight(0) + 30) / 60)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
 2
 normal! 03|
+<<<<<<< HEAD
 tabnext 3
+=======
+tabnext 9
+set stal=1
+>>>>>>> e5977da03749abd3a2cb51eb557ead9ccd795692
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
 endif
