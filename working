@@ -84,6 +84,7 @@ set smartindent
 set softtabstop=2
 set suffixes=.bak,~,.swp,.o,.info,.aux,.log,.dvi,.bbl,.blg,.brf,.cb,.ind,.idx,.ilg,.inx,.out,.toc
 set tabstop=2
+set window=47
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
@@ -116,11 +117,11 @@ badd +2 public/js/lib.js
 badd +78 views/pages/onAir.ejs
 badd +14 views/pages/common/sidebar-include.ejs
 badd +7 routes/onAir.js
-badd +0 views/pages/onHire.ejs
-badd +0 views/pages/releaseToShipper.ejs
+badd +1 views/pages/onHire.ejs
+badd +1 views/pages/releaseToShipper.ejs
 badd +10 routes/releaseToShipper.js
-badd +0 public/lib.min.js
-badd +0 node_modules/startbootstrap-sb-admin-2-gh-pages/js/sb-admin-2.js
+badd +1 public/lib.min.js
+badd +1 node_modules/startbootstrap-sb-admin-2-gh-pages/js/sb-admin-2.js
 args app.js
 edit app.js
 set splitbelow splitright
@@ -253,7 +254,7 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 1 - ((0 * winheight(0) + 22) / 44)
+let s:l = 1 - ((0 * winheight(0) + 22) / 45)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
@@ -527,11 +528,11 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 35 - ((34 * winheight(0) + 22) / 44)
+let s:l = 1 - ((0 * winheight(0) + 23) / 46)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-35
+1
 normal! 05|
 tabedit public/sevenocean.less
 set splitbelow splitright
@@ -1212,56 +1213,8 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-100
-normal! zo
-116
-normal! zo
-125
-normal! zo
-134
-normal! zo
-143
-normal! zo
-152
-normal! zo
-100
-normal! zc
-116
-normal! zo
-126
-normal! zo
-135
-normal! zo
-144
-normal! zo
-153
-normal! zo
-116
-normal! zc
-126
-normal! zo
-136
-normal! zo
-145
-normal! zo
-154
-normal! zo
-126
-normal! zc
-136
-normal! zo
-146
-normal! zo
-155
-normal! zo
-136
-normal! zc
-146
-normal! zo
 156
 normal! zo
-146
-normal! zc
 let s:l = 4 - ((0 * winheight(0) + 22) / 44)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
@@ -1399,12 +1352,12 @@ setlocal nowinfixheight
 setlocal nowinfixwidth
 setlocal wrap
 setlocal wrapmargin=0
-let s:l = 104 - ((92 * winheight(0) + 22) / 44)
+let s:l = 76 - ((70 * winheight(0) + 22) / 44)
 if s:l < 1 | let s:l = 1 | endif
 exe s:l
 normal! zt
-104
-normal! 01|
+76
+normal! 0
 tabedit views/pages/common/foot-include.ejs
 set splitbelow splitright
 set nosplitbelow
@@ -1542,7 +1495,7 @@ exe s:l
 normal! zt
 2
 normal! 03|
-tabnext 9
+tabnext 3
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf
 endif
