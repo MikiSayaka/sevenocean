@@ -1,0 +1,228 @@
+<% include common/head-include %>
+    <div id="wrapper">
+      <nav class="navbar navbar-default navbar-static-top no-margin-bottom" role="navigation">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="/">七海航運</a>
+        </div>
+        <!--{{{ Top message bar, comment it. -->
+        <!--
+        <ul class="nav navbar-top-links navbar-right">
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">
+              <i class="fa fa-envelope fa-fw">&nbsp;</i>
+              <i class="fa fa-caret-down">&nbsp;</i>
+            </a>
+            <ul class="dropdown-menu dropdown-messages">
+              <li>
+                <a href="#">
+                  <div>
+                    <strong>User Name</strong>
+                    <span class="pull-right text-center">
+                      <em>Sending time</em>
+                    </span>
+                  </div>
+                  <div>Message content</div>
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <div>
+                    <strong>User Name</strong>
+                    <span class="pull-right text-center">
+                      <em>Sending time</em>
+                    </span>
+                  </div>
+                  <div>Message content</div>
+                </a>
+              </li>
+              <li>
+                <a class="text-center" href="#">
+                  <strong>Read All Message</strong>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+              </li>
+            </ul>
+          </li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">
+              <i class="fa fa-tasks fa-fw">&nbsp;</i>
+              <i class="fa fa-caret-down">&nbsp;</i>
+            </a>
+          </li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">
+              <i class="fa fa-bell fa-fw">&nbsp;</i>
+              <i class="fa fa-caret-down">&nbsp;</i>
+            </a>
+          </li>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" href="#">
+              <i class="fa fa-user fa-fw">&nbsp;</i>
+              <i class="fa fa-caret-down">&nbsp;</i>
+            </a>
+          </li>
+        </ul>
+        -->
+        <!--}}}-->
+        <% include common/sidebar-include %>
+      </nav>
+      <div id="page-wrapper">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <h1 class="page-header">DISCHARGE</h1>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <form class="form-horizontal" id="onHireForm" name="onHireForm">
+              <!--{{{-->
+              <div class="row">
+                <div class="form-group col-lg-6">
+                  <label for="container_no" class="col-lg-4 control-label">CONTAINER NO.：</label>
+                  <div class="col-lg-4">
+                    <input type="text" id="container_no" name="container_no" class="form-control" placeholder="CONTAINER NO.">
+                  </div>
+                </div>
+                <div class="form-group col-lg-6 col-lg-pull-2">
+                  <label for="type" class="col-lg-4 control-label">TYPE：</label>
+                  <div class="col-lg-4">
+                    <input type="text" id="type" name="type" class="form-control" placeholder="TYPE">
+                  </div>
+                </div>
+              </div>
+              <!--}}}-->
+              <!--{{{-->
+              <div class="row">
+                <div class="form-group col-lg-6">
+                  <label for="full_empty" class="col-lg-4 control-label">FULL / EMPTY：</label>
+                  <div class="col-lg-4">
+                    <input type="text" id="full_empty" name="full_empty" class="form-control" placeholder="FULL / EMPTY">
+                  </div>
+                </div>
+              </div>
+              <!--}}}-->
+              <!--{{{-->
+              <div class="row">
+                <div class="form-group col-lg-6">
+                  <label for="loading_port" class="col-lg-4 control-label">DISCHARGE PORT：</label>
+                  <div class="col-lg-4">
+                    <input type="text" id="loading_port" name="loading_port" class="form-control" placeholder="LOADING PORT">
+                  </div>
+                </div>
+                <div class="form-group col-lg-6 col-lg-pull-2">
+                  <label for="type" class="col-lg-4 control-label">DESTINATION：</label>
+                  <div class="col-lg-4">
+                    <input type="text" id="destination" name="destination" class="form-control" placeholder="DESTINATION">
+                  </div>
+                </div>
+              </div>
+              <!--}}}-->
+              <!--{{{-->
+              <div class="row">
+                <div class="form-group col-lg-6">
+                  <label for="vessel" class="col-lg-4 control-label">VESSEL：</label>
+                  <div class="col-lg-4">
+                    <input type="text" id="transaction_time" name="transaction_time" class="form-control" placeholder="TRANSACTION TIME">
+                  </div>
+                </div>
+                <div class="form-group col-lg-6 col-lg-pull-2">
+                  <label for="voyage" class="col-lg-4 control-label">VOYAGE：</label>
+                  <div class="col-lg-4">
+                    <input type="text" id="voyage" name="voyage" class="form-control" placeholder="VOYAGE">
+                  </div>
+                </div>
+              </div>
+              <!--}}}-->
+              <!--{{{-->
+              <div class="row">
+                <div class="form-group col-lg-6">
+                  <label for="transaction_time" class="col-lg-4 control-label">TRANSACTION TIME：</label>
+                  <div class="col-lg-4">
+                    <input type="text" id="transaction_time" name="transaction_time" class="form-control" placeholder="TRANSACTION TIME">
+                  </div>
+                </div>
+              </div>
+              <!--}}}-->
+              <!--{{{-->
+              <div class="row">
+                <div class="form-group col-lg-6">
+                  <label for="blno" class="col-lg-4 control-label">B/L NO：</label>
+                  <div class="col-lg-4">
+                    <input type="text" id="blno" name="blno" class="form-control" placeholder="B/L NO.">
+                  </div>
+                </div>
+              </div>
+              <!--}}}-->
+              <!--{{{-->
+              <div class="row">
+                <div class="form-group col-lg-6">
+                  <label for="depot" class="col-lg-4 control-label">DEPOT：</label>
+                  <div class="col-lg-4">
+                    <input type="text" id="depot" name="depot" class="form-control" placeholder="DEPOT">
+                  </div>
+                </div>
+              </div>
+              <!--}}}-->
+              <!--{{{-->
+              <div class="row">
+                <div class="form-group col-lg-6">
+                  <label for="consignee" class="col-lg-4 control-label">CONSIGNEE：</label>
+                  <div class="col-lg-4">
+                    <input type="text" id="consignee" name="consignee" class="form-control" placeholder="CONSIGNEE">
+                  </div>
+                </div>
+              </div>
+              <!--}}}-->
+              <!--{{{-->
+              <div class="row">
+                <div class="form-group col-lg-6">
+                  <label for="notify" class="col-lg-4 control-label">NOTIFY：</label>
+                  <div class="col-lg-4">
+                    <input type="text" id="notify" name="notify" class="form-control" placeholder="NOTIFY">
+                  </div>
+                </div>
+              </div>
+              <!--}}}-->
+              <!--{{{-->
+              <div class="row">
+                <div class="form-group col-lg-6">
+                  <label for="carrier_type" class="col-lg-4 control-label">CARRIER TYPE：</label>
+                  <div class="col-lg-4">
+                    <input type="text" id="CARRIER TYPE" name="CARRIER TYPE" class="form-control" placeholder="CARRIER TYPE">
+                  </div>
+                </div>
+              </div>
+              <!--}}}-->
+              <!--{{{-->
+              <div class="row">
+                <div class="form-group col-lg-6">
+                  <label for="physical_status" class="col-lg-4 control-label">PHYSICAL STATUS：</label>
+                  <div class="col-lg-4">
+                    <input type="text" id="physical_status" name="physical_status" class="form-control" placeholder="PHYSICAL STATUS">
+                  </div>
+                </div>
+              </div>
+              <!--}}}-->
+              <!--{{{-->
+              <div class="row">
+                <div class="form-group col-lg-6">
+                  <label for="container_no" class="col-lg-4 control-label">&nbsp;</label>
+                  <div class="col-lg-8">
+                    <button class="btn btn-primary" id="submit">送出</button>
+                    <button class="btn btn-danger" id="reset">清空</button>
+                  </div>
+                </div>
+              </div>
+              <!--}}}-->
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+<% include common/foot-include %>
