@@ -11,6 +11,8 @@ var onHire = require('./routes/onHire');
 var releaseToShipper = require('./routes/releaseToShipper');
 var returnToShipper = require('./routes/returnToShipper');
 var loadOnBoard = require('./routes/loadOnBoard');
+var discharge = require('./routes/discharge');
+var deliverToConsignee = require('./routes/deliverToConsignee');
 
 var app = express();
 
@@ -30,6 +32,8 @@ app.use('/onHire', onHire);
 app.use('/releaseToShipper', releaseToShipper);
 app.use('/returnToShipper', returnToShipper);
 app.use('/loadOnBoard', loadOnBoard);
+app.use('/discharge', discharge);
+app.use('/deliverToConsignee', deliverToConsignee);
 
 //  catch 404 and forward to error handler
 app.use(function(req, res, next) {
