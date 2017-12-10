@@ -6,13 +6,17 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var ejs = require('ejs');
 
-var routes = require('./routes/index');
+var routes = require('./routes/index')
 var onHire = require('./routes/onHire');
 var releaseToShipper = require('./routes/releaseToShipper');
 var returnToShipper = require('./routes/returnToShipper');
 var loadOnBoard = require('./routes/loadOnBoard');
 var discharge = require('./routes/discharge');
 var deliverToConsignee = require('./routes/deliverToConsignee');
+var strip = require('./routes/strip');
+var returnToConsignee = require('./routes/returnToConsignee');
+var offHire = require('./routes/offHire');
+var loadOnTrainAndTruck = require('./routes/loadOnTrainAndTruck');
 
 var app = express();
 
@@ -34,6 +38,10 @@ app.use('/returnToShipper', returnToShipper);
 app.use('/loadOnBoard', loadOnBoard);
 app.use('/discharge', discharge);
 app.use('/deliverToConsignee', deliverToConsignee);
+app.use('/strip', strip);
+app.use('/returnToConsignee', returnToConsignee);
+app.use('/offHire', offHire);
+app.use('/loadOnTrainAndTruck', loadOnTrainAndTruck);
 
 //  catch 404 and forward to error handler
 app.use(function(req, res, next) {
