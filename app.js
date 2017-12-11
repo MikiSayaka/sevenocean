@@ -33,6 +33,9 @@ app.use('/returnToConsignee', paths);
 app.use('/offHire', paths);
 app.use('/loadOnTrainAndTruck', paths);
 app.use('/dischargeOnTrainAndTruck', paths);
+app.use('/cfsStuff', paths);
+app.use('/emptyGateIn', paths);
+app.use('/emptyGateOut', paths);
 
 //  catch 404 and forward to error handler
 app.use(function(req, res, next) {
