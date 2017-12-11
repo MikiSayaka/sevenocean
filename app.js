@@ -6,17 +6,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var ejs = require('ejs');
 
-var routes = require('./routes/index')
-var onHire = require('./routes/onHire');
-var releaseToShipper = require('./routes/releaseToShipper');
-var returnToShipper = require('./routes/returnToShipper');
-var loadOnBoard = require('./routes/loadOnBoard');
-var discharge = require('./routes/discharge');
-var deliverToConsignee = require('./routes/deliverToConsignee');
-var strip = require('./routes/strip');
-var returnToConsignee = require('./routes/returnToConsignee');
-var offHire = require('./routes/offHire');
-var loadOnTrainAndTruck = require('./routes/loadOnTrainAndTruck');
+var paths = require('./routes/paths');
 
 var app = express();
 
@@ -31,17 +21,18 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', routes);
-app.use('/onHire', onHire);
-app.use('/releaseToShipper', releaseToShipper);
-app.use('/returnToShipper', returnToShipper);
-app.use('/loadOnBoard', loadOnBoard);
-app.use('/discharge', discharge);
-app.use('/deliverToConsignee', deliverToConsignee);
-app.use('/strip', strip);
-app.use('/returnToConsignee', returnToConsignee);
-app.use('/offHire', offHire);
-app.use('/loadOnTrainAndTruck', loadOnTrainAndTruck);
+app.use('/', paths);
+app.use('/onHire', paths);
+app.use('/releaseToShipper', paths);
+app.use('/returnToShipper', paths);
+app.use('/loadOnBoard', paths);
+app.use('/discharge', paths);
+app.use('/deliverToConsignee', paths);
+app.use('/strip', paths);
+app.use('/returnToConsignee', paths);
+app.use('/offHire', paths);
+app.use('/loadOnTrainAndTruck', paths);
+app.use('/dischargeOnTrainAndTruck', paths);
 
 //  catch 404 and forward to error handler
 app.use(function(req, res, next) {
