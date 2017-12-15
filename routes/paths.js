@@ -27,7 +27,7 @@ router.post('/', function(req, res, next) {
     //  host     : 'a8965128-sevenocean-4506657',
     host     : 'sevenocean-a8965128.c9users.io',
     port     : '3306',
-    user     : 'Miki Sayaka',
+    user     : 'mikisayaka',
     password : '',
     database : 'c9'
   });
