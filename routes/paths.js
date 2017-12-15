@@ -25,11 +25,13 @@ router.post('/', function(req, res, next) {
 
   var connection = mysql.createConnection({
     //  host     : 'a8965128-sevenocean-4506657',
-    host     : 'localhost',
-    user     : 'seveanocean',
-    password : 'Chao0114',
-    database : 'SEVENOCEAN'
+    host     : 'sevenocean-a8965128.c9users.io',
+    port     : '3306',
+    user     : 'Miki Sayaka',
+    password : '',
+    database : 'c9'
   });
+  
   connection.connect();
    
   connection.query('SELECT 1 + 1 AS solution', function (err, rows, fields) {
@@ -41,6 +43,5 @@ router.post('/', function(req, res, next) {
   
   res.render('pages' + _url);
 });
-
 
 module.exports = router;
