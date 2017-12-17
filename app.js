@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var ejs = require('ejs');
 
 var paths = require('./routes/paths');
+var db = require('./db');
 
 var app = express();
 
@@ -20,6 +21,18 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+//  Database and models
+db.connect(db.TEST_DB, function(err){
+  if (err) {
+    console.log('Unable to connect database.');
+    process.exit(1);
+  } else {
+    app.listen(3000, function(){
+      console.log('Listening on port 3000...');
+    });
+  }
+});
 
 app.use('/', paths);
 app.use('/onHire', paths);
