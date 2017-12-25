@@ -13,6 +13,7 @@ router.get('/', function(req, res, next) {
 router.post('/', function(req, res, next) {
   var _url = req.baseUrl;
   var _containerInfo = new Object();
+  var _seqCount;
   
   _containerInfo.container_no = (req.body.container_no == undefined) ? '' : req.body.container_no;
   _containerInfo.type = (req.body.type == undefined) ? '' : req.body.type;
@@ -45,16 +46,26 @@ router.post('/', function(req, res, next) {
   _containerInfo.discharge_port = (req.body.discharge_port == undefined) ? '' : req.body.discharge_port;
   _containerInfo.carrier_id = (req.body.carrier_id == undefined) ? '' : req.bod.carrier_id;
   _containerInfo.acceptance_ref = (req.body.acceptance_ref == undefined) ? '' : req.bod.acceptance_ref;
-  _containerInfo.container_status = (req.body.container_status == undefined) ? '' : req.bod.container_status;
-  _containerInfo.data_seq = '';
+  _containerInfo.container_status = _url;
+  
+  data.countData(_containerInfo.container_status ,function(_flag, _data){
+    _seqCount = JSON.parse(JSON.stringify(_data[0]));
+    _containerInfo.data_seq = _seqCount.COUNT;
+    console.log(mikiGobal.zeroLift(_containerInfo.data_seq, 4));
+  });
+  
+  
+  //  data.insertContainerInfo(_containerInfo ,function(_flag, _data){
+  //    console.log(_flag, _data);
+  //  });
 
-  data.test(function(_a, _b){
-    var _restuleArr = _b;
-    for (var _key in _restuleArr) {
-      console.log(_restuleArr[_key]);
-      //  JSON.stringify(_dataArr)
-    }
-  }); 
+  //  data.test(function(_a, _b){
+  //    var _restuleArr = _b;
+  //    for (var _key in _restuleArr) {
+  //      console.log(_restuleArr[_key]);
+  //      //  JSON.stringify(_dataArr)
+  //    }
+  //  }); 
   
   res.render('pages' + _url);
 });

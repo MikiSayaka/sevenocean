@@ -57,11 +57,11 @@ exports.insertContainerInfo = function(_containerInfo, _done) {
   });
 }
 
-exports.test = function(done) {
-  db.get().query('SELECT 1 + 1 AS SOLUTION;', function(err, rows){
+exports.countData = function(_containerStatus, _done) {
+  db.get().query('SELECT COUNT(CONTAINER_STATUS) AS COUNT FROM CONTAINER_INFO WHERE CONTAINER_STATUS = ?;', _containerStatus, function(err, rows){
     if (err) {
-      return done(err);
+      return _done(err);
     }
-    done(null, rows);
+    _done(null, rows);
   });
 };
