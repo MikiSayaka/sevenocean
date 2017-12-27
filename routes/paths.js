@@ -2,6 +2,7 @@ var express = require('express');
 var mikiGobal = require('../miki.gobal.js');
 var router = express.Router();
 var data = require('../modules/dataHandle');
+var moment = require('../node_modules/moment/moment');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -46,28 +47,21 @@ router.post('/', function(req, res, next) {
   _containerInfo.discharge_port = (req.body.discharge_port == undefined) ? '' : req.body.discharge_port;
   _containerInfo.carrier_id = (req.body.carrier_id == undefined) ? '' : req.bod.carrier_id;
   _containerInfo.acceptance_ref = (req.body.acceptance_ref == undefined) ? '' : req.bod.acceptance_ref;
-  _containerInfo.container_status = _url;
+  _containerInfo.container_status = _url.replace('/', '');
   
-  data.countData(_containerInfo.container_status ,function(_flag, _data){
+  data.countSeq(_containerInfo.container_status, moment().format('YYYYMMDD'), function(_flag, _data){
     _seqCount = JSON.parse(JSON.stringify(_data[0]));
-    _containerInfo.data_seq = _seqCount.COUNT;
-    console.log(mikiGobal.zeroLift(_containerInfo.data_seq, 4));
+    _containerInfo.data_seq = moment().format('YYYYMMDD') + mikiGobal.zeroLift(_seqCount.COUNT, 4);
+    data.insertContainerInfo(_containerInfo ,function(_flag, _data){
+      data.queryData(_containerInfo.container_status, moment().format('YYYYMMDD'), function(_flag, _data){
+        var _responseData = JSON.parse(JSON.stringify(_data));
+        for (var _i in _responseData) {
+          console.log(_responseData[_i]);
+        }
+        res.render('pages' + _url);
+      });
+    });
   });
-  
-  
-  //  data.insertContainerInfo(_containerInfo ,function(_flag, _data){
-  //    console.log(_flag, _data);
-  //  });
-
-  //  data.test(function(_a, _b){
-  //    var _restuleArr = _b;
-  //    for (var _key in _restuleArr) {
-  //      console.log(_restuleArr[_key]);
-  //      //  JSON.stringify(_dataArr)
-  //    }
-  //  }); 
-  
-  res.render('pages' + _url);
 });
 
 module.exports = router;

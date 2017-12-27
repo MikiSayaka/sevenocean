@@ -49,16 +49,26 @@ exports.insertContainerInfo = function(_containerInfo, _done) {
     _containerInfo.container_status,
     _containerInfo.data_seq
   ];
-  db.get().query('INSERT INTO CONTAINER_INFO (CONTAINER_NO, CONTAINER_TYPE, HDS_LEASE_REF, LOADING_PORT, LESSOR_DEPOT, TRANSACTION_TIME, LEASE_COMPANY, HDS_DEPOT, DEPOT, SHIPPER, FORWARDEF, BOOKING_REF_NO, HAULER_CO, RELEASE_REF_NO, FULL_EMPTY, SEAL_NO, OWNER_TYPE, PHYSICAL_STATUS, DESTINATION, VESSEL, VOYAGE, B_L_NO, CONSIGNEE, NOTIFY, WEIGHT, BAY, SLOT, CARRIER_TYPE, DISCHARGE_PORT, CARRIER_ID, ACCEPTANCE_REF, CONTAINER_STATUS, DATA_SEQ ) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) ', _values, function(_err, _result){
-    if (_err) {
+  db.get().query('INSERT INTO CONTAINER_INFO (CONTAINER_NO, CONTAINER_TYPE, HDS_LEASE_REF, LOADING_PORT, LESSOR_DEPOT, TRANSACTION_TIME, LEASE_COMPANY, HDS_DEPOT, DEPOT, SHIPPER, FORWARDEF, BOOKING_REF_NO, HAULER_CO, RELEASE_REF_NO, FULL_EMPTY, SEAL_NO, OWNER_TYPE, PHYSICAL_STATUS, DESTINATION, VESSEL, VOYAGE, B_L_NO, CONSIGNEE, NOTIFY, WEIGHT, BAY, SLOT, CARRIER_TYPE, DISCHARGE_PORT, CARRIER_ID, ACCEPTANCE_REF, CONTAINER_STATUS, DATA_SEQ, INSERT_DATE) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW()) ', _values, function(_err, _result){ if (_err) {
       return _done('Indsert error.');
     }
     _done(null, _result);
   });
 }
 
-exports.countData = function(_containerStatus, _done) {
-  db.get().query('SELECT COUNT(CONTAINER_STATUS) AS COUNT FROM CONTAINER_INFO WHERE CONTAINER_STATUS = ?;', _containerStatus, function(err, rows){
+exports.countSeq = function(_containerStatus, _dataSeqTime, _done) {
+  var _values = [_containerStatus, _dataSeqTime];
+  db.get().query('SELECT COUNT(CONTAINER_STATUS) AS COUNT FROM CONTAINER_INFO WHERE CONTAINER_STATUS = ? AND DATE(INSERT_DATE) = CURDATE();', _values, function(err, rows){
+    if (err) {
+      return _done(err);
+    }
+    _done(null, rows);
+  });
+};
+
+exports.queryData = function(_containerStatus, _dataSeqTime, _done) {
+  var _values = [_containerStatus, _dataSeqTime];
+  db.get().query('SELECT * FROM CONTAINER_INFO WHERE CONTAINER_STATUS = ? AND DATE(INSERT_DATE) = CURDATE();', _values, function(err, rows){
     if (err) {
       return _done(err);
     }
