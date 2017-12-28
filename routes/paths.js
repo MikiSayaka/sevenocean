@@ -7,7 +7,12 @@ var moment = require('../node_modules/moment/moment');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   var _url = req.baseUrl;
-  res.render('pages' + _url);
+  data.queryData(_url.replace('/', ''), moment().format('YYYYMMDD'), function(_flag, _data){
+    var _responseData = JSON.parse(JSON.stringify(_data));
+    res.render('pages' + _url, {
+      container_data: _responseData
+    });
+  });
 });
 
 /* POST data insert. */
@@ -55,10 +60,9 @@ router.post('/', function(req, res, next) {
     data.insertContainerInfo(_containerInfo ,function(_flag, _data){
       data.queryData(_containerInfo.container_status, moment().format('YYYYMMDD'), function(_flag, _data){
         var _responseData = JSON.parse(JSON.stringify(_data));
-        for (var _i in _responseData) {
-          console.log(_responseData[_i]);
-        }
-        res.render('pages' + _url);
+        res.render('pages' + _url, {
+          container_data: _responseData
+        });
       });
     });
   });

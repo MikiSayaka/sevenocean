@@ -5,6 +5,10 @@
 /*}}}*/
 
 /*{{{ 基本樣式調整  */
+hr {
+  border-top: 1px solid rgba(0, 0, 0, .3);
+}
+
 #page-wrapper {
   min-height: 100vh;
 }
@@ -24,10 +28,30 @@
 
 /*{{{ 表單內標題不折行  */
 .container-form {
+  .form-group {
+    margin-left: 0;
+    margin-right: 0;
+  }
   label {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+}
+/*}}}*/
+
+/*{{{ 表格樣式  */
+.data-table {
+  overflow: hidden;
+  div {
+    overflow-x: auto;
+    table {
+      thead {
+        th {
+          white-space: nowrap;
+        }
+      }
+    }
   }
 }
 /*}}}*/

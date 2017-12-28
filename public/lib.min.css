@@ -60,7 +60,6 @@ h2,h3{page-break-after:avoid}
 .table-bordered td,.table-bordered th{border:1px solid #ddd!important}
 }
 .dropdown-menu,.modal-content{-webkit-background-clip:padding-box}
-.btn,.btn-danger.active,.btn-danger:active,.btn-default.active,.btn-default:active,.btn-info.active,.btn-info:active,.btn-primary.active,.btn-primary:active,.btn-warning.active,.btn-warning:active,.btn.active,.btn:active,.dropdown-menu>.disabled>a:focus,.dropdown-menu>.disabled>a:hover,.form-control,.navbar-toggle,.open>.dropdown-toggle.btn-danger,.open>.dropdown-toggle.btn-default,.open>.dropdown-toggle.btn-info,.open>.dropdown-toggle.btn-primary,.open>.dropdown-toggle.btn-warning{background-image:none}
 @font-face{font-family:'Glyphicons Halflings';src:url(../fonts/glyphicons-halflings-regular.eot);src:url(../fonts/glyphicons-halflings-regular.eot?#iefix) format('embedded-opentype'),url(../fonts/glyphicons-halflings-regular.woff2) format('woff2'),url(../fonts/glyphicons-halflings-regular.woff) format('woff'),url(../fonts/glyphicons-halflings-regular.ttf) format('truetype'),url(../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular) format('svg')}
 .glyphicon{position:relative;top:1px;display:inline-block;font-family:'Glyphicons Halflings';font-weight:400;line-height:1;-webkit-font-smoothing:antialiased}
 .glyphicon-asterisk:before{content:"\002a"}
@@ -397,7 +396,6 @@ dd{margin-left:0}
 .dl-horizontal dd{margin-left:180px}
 .container{width:750px}
 }
-.btn-group-vertical>.btn-group:after,.btn-toolbar:after,.clearfix:after,.container-fluid:after,.container:after,.dl-horizontal dd:after,.form-horizontal .form-group:after,.modal-footer:after,.modal-header:after,.nav:after,.navbar-collapse:after,.navbar-header:after,.navbar:after,.pager:after,.panel-body:after,.row:after,.timeline>li:after{clear:both}
 abbr[data-original-title],abbr[title]{cursor:help;border-bottom:1px dotted #777}
 .initialism{font-size:90%;text-transform:uppercase}
 blockquote{padding:10px 20px;margin:0 0 20px;font-size:17.5px;border-left:5px solid #eee}
@@ -678,7 +676,8 @@ input[type=range]{display:block;width:100%}
 select[multiple],select[size]{height:auto}
 input[type=file]:focus,input[type=checkbox]:focus,input[type=radio]:focus{outline:-webkit-focus-ring-color auto 5px;outline-offset:-2px}
 output{padding-top:7px}
-.form-control{width:100%;height:34px;padding:6px 12px;background-color:#fff;border:1px solid #ccc;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075);box-shadow:inset 0 1px 1px rgba(0,0,0,.075);-webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s}
+.btn,.form-control{padding:6px 12px;background-image:none}
+.form-control{width:100%;height:34px;background-color:#fff;border:1px solid #ccc;border-radius:4px;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075);box-shadow:inset 0 1px 1px rgba(0,0,0,.075);-webkit-transition:border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;-o-transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s;transition:border-color ease-in-out .15s,box-shadow ease-in-out .15s}
 .form-control:focus{border-color:#66afe9;outline:0;-webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)}
 .form-control::-moz-placeholder{color:#999;opacity:1}
 .form-control:-ms-input-placeholder{color:#999}
@@ -694,11 +693,13 @@ textarea.form-control{height:auto}
 }
 .form-group{margin-bottom:15px}
 .checkbox,.radio{position:relative;display:block;margin-top:10px;margin-bottom:10px}
+.btn,.checkbox-inline,.radio-inline{display:inline-block;vertical-align:middle;font-weight:400}
 .checkbox label,.radio label{min-height:20px;padding-left:20px;margin-bottom:0;font-weight:400;cursor:pointer}
 .checkbox input[type=checkbox],.checkbox-inline input[type=checkbox],.radio input[type=radio],.radio-inline input[type=radio]{position:absolute;margin-top:4px\9;margin-left:-20px}
 .checkbox+.checkbox,.radio+.radio{margin-top:-5px}
-.checkbox-inline,.radio-inline{position:relative;display:inline-block;padding-left:20px;margin-bottom:0;font-weight:400;vertical-align:middle;cursor:pointer}
+.checkbox-inline,.radio-inline{position:relative;padding-left:20px;margin-bottom:0;cursor:pointer}
 .checkbox-inline+.checkbox-inline,.radio-inline+.radio-inline{margin-top:0;margin-left:10px}
+.btn-block+.btn-block,.help-block{margin-top:5px}
 .checkbox-inline.disabled,.checkbox.disabled label,.radio-inline.disabled,.radio.disabled label,fieldset[disabled] .checkbox label,fieldset[disabled] .checkbox-inline,fieldset[disabled] .radio label,fieldset[disabled] .radio-inline,fieldset[disabled] input[type=checkbox],fieldset[disabled] input[type=radio],input[type=checkbox].disabled,input[type=checkbox][disabled],input[type=radio].disabled,input[type=radio][disabled]{cursor:not-allowed}
 .form-control-static{min-height:34px;padding-top:7px;padding-bottom:7px;margin-bottom:0}
 .form-control-static.input-lg,.form-control-static.input-sm{padding-right:0;padding-left:0}
@@ -737,7 +738,7 @@ select[multiple].input-lg,textarea.input-lg{height:auto}
 .has-error .input-group-addon{color:#a94442;background-color:#f2dede;border-color:#a94442}
 .has-feedback label~.form-control-feedback{top:25px}
 .has-feedback label.sr-only~.form-control-feedback{top:0}
-.help-block{display:block;margin-top:5px;margin-bottom:10px;color:#737373}
+.help-block{display:block;margin-bottom:10px;color:#737373}
 @media (min-width:768px){.form-inline .form-control-static,.form-inline .form-group{display:inline-block}
 .form-inline .control-label,.form-inline .form-group{margin-bottom:0;vertical-align:middle}
 .form-inline .form-control{display:inline-block;width:auto;vertical-align:middle}
@@ -757,22 +758,24 @@ select[multiple].input-lg,textarea.input-lg{height:auto}
 @media (min-width:768px){.form-horizontal .form-group-lg .control-label{padding-top:11px;font-size:18px}
 .form-horizontal .form-group-sm .control-label{padding-top:6px;font-size:12px}
 }
-.btn{display:inline-block;padding:6px 12px;margin-bottom:0;font-size:14px;font-weight:400;line-height:1.42857143;text-align:center;white-space:nowrap;vertical-align:middle;-ms-touch-action:manipulation;touch-action:manipulation;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;border:1px solid transparent;border-radius:4px}
+.btn{margin-bottom:0;font-size:14px;line-height:1.42857143;text-align:center;white-space:nowrap;-ms-touch-action:manipulation;touch-action:manipulation;cursor:pointer;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;border:1px solid transparent;border-radius:4px}
 .btn.active.focus,.btn.active:focus,.btn.focus,.btn:active.focus,.btn:active:focus,.btn:focus{outline:-webkit-focus-ring-color auto 5px;outline-offset:-2px}
 .btn.focus,.btn:focus,.btn:hover{color:#333;text-decoration:none}
-.btn.active,.btn:active{outline:0;-webkit-box-shadow:inset 0 3px 5px rgba(0,0,0,.125);box-shadow:inset 0 3px 5px rgba(0,0,0,.125)}
+.btn.active,.btn:active{background-image:none;outline:0;-webkit-box-shadow:inset 0 3px 5px rgba(0,0,0,.125);box-shadow:inset 0 3px 5px rgba(0,0,0,.125)}
 .btn.disabled,.btn[disabled],fieldset[disabled] .btn{cursor:not-allowed;filter:alpha(opacity=65);-webkit-box-shadow:none;box-shadow:none;opacity:.65}
 a.btn.disabled,fieldset[disabled] a.btn{pointer-events:none}
 .btn-default{color:#333;background-color:#fff;border-color:#ccc}
 .btn-default.focus,.btn-default:focus{color:#333;background-color:#e6e6e6;border-color:#8c8c8c}
 .btn-default.active,.btn-default:active,.btn-default:hover,.open>.dropdown-toggle.btn-default{color:#333;background-color:#e6e6e6;border-color:#adadad}
 .btn-default.active.focus,.btn-default.active:focus,.btn-default.active:hover,.btn-default:active.focus,.btn-default:active:focus,.btn-default:active:hover,.open>.dropdown-toggle.btn-default.focus,.open>.dropdown-toggle.btn-default:focus,.open>.dropdown-toggle.btn-default:hover{color:#333;background-color:#d4d4d4;border-color:#8c8c8c}
+.btn-default.active,.btn-default:active,.open>.dropdown-toggle.btn-default{background-image:none}
 .btn-default.disabled.focus,.btn-default.disabled:focus,.btn-default.disabled:hover,.btn-default[disabled].focus,.btn-default[disabled]:focus,.btn-default[disabled]:hover,fieldset[disabled] .btn-default.focus,fieldset[disabled] .btn-default:focus,fieldset[disabled] .btn-default:hover{background-color:#fff;border-color:#ccc}
 .btn-default .badge{color:#fff;background-color:#333}
 .btn-primary{color:#fff;background-color:#337ab7;border-color:#2e6da4}
 .btn-primary.focus,.btn-primary:focus{color:#fff;background-color:#286090;border-color:#122b40}
 .btn-primary.active,.btn-primary:active,.btn-primary:hover,.open>.dropdown-toggle.btn-primary{color:#fff;background-color:#286090;border-color:#204d74}
 .btn-primary.active.focus,.btn-primary.active:focus,.btn-primary.active:hover,.btn-primary:active.focus,.btn-primary:active:focus,.btn-primary:active:hover,.open>.dropdown-toggle.btn-primary.focus,.open>.dropdown-toggle.btn-primary:focus,.open>.dropdown-toggle.btn-primary:hover{color:#fff;background-color:#204d74;border-color:#122b40}
+.btn-primary.active,.btn-primary:active,.open>.dropdown-toggle.btn-primary{background-image:none}
 .btn-primary.disabled.focus,.btn-primary.disabled:focus,.btn-primary.disabled:hover,.btn-primary[disabled].focus,.btn-primary[disabled]:focus,.btn-primary[disabled]:hover,fieldset[disabled] .btn-primary.focus,fieldset[disabled] .btn-primary:focus,fieldset[disabled] .btn-primary:hover{background-color:#337ab7;border-color:#2e6da4}
 .btn-primary .badge{color:#337ab7;background-color:#fff}
 .btn-success{color:#fff;background-color:#5cb85c;border-color:#4cae4c}
@@ -786,18 +789,21 @@ a.btn.disabled,fieldset[disabled] a.btn{pointer-events:none}
 .btn-info.focus,.btn-info:focus{color:#fff;background-color:#31b0d5;border-color:#1b6d85}
 .btn-info.active,.btn-info:active,.btn-info:hover,.open>.dropdown-toggle.btn-info{color:#fff;background-color:#31b0d5;border-color:#269abc}
 .btn-info.active.focus,.btn-info.active:focus,.btn-info.active:hover,.btn-info:active.focus,.btn-info:active:focus,.btn-info:active:hover,.open>.dropdown-toggle.btn-info.focus,.open>.dropdown-toggle.btn-info:focus,.open>.dropdown-toggle.btn-info:hover{color:#fff;background-color:#269abc;border-color:#1b6d85}
+.btn-info.active,.btn-info:active,.open>.dropdown-toggle.btn-info{background-image:none}
 .btn-info.disabled.focus,.btn-info.disabled:focus,.btn-info.disabled:hover,.btn-info[disabled].focus,.btn-info[disabled]:focus,.btn-info[disabled]:hover,fieldset[disabled] .btn-info.focus,fieldset[disabled] .btn-info:focus,fieldset[disabled] .btn-info:hover{background-color:#5bc0de;border-color:#46b8da}
 .btn-info .badge{color:#5bc0de;background-color:#fff}
 .btn-warning{color:#fff;background-color:#f0ad4e;border-color:#eea236}
 .btn-warning.focus,.btn-warning:focus{color:#fff;background-color:#ec971f;border-color:#985f0d}
 .btn-warning.active,.btn-warning:active,.btn-warning:hover,.open>.dropdown-toggle.btn-warning{color:#fff;background-color:#ec971f;border-color:#d58512}
 .btn-warning.active.focus,.btn-warning.active:focus,.btn-warning.active:hover,.btn-warning:active.focus,.btn-warning:active:focus,.btn-warning:active:hover,.open>.dropdown-toggle.btn-warning.focus,.open>.dropdown-toggle.btn-warning:focus,.open>.dropdown-toggle.btn-warning:hover{color:#fff;background-color:#d58512;border-color:#985f0d}
+.btn-warning.active,.btn-warning:active,.open>.dropdown-toggle.btn-warning{background-image:none}
 .btn-warning.disabled.focus,.btn-warning.disabled:focus,.btn-warning.disabled:hover,.btn-warning[disabled].focus,.btn-warning[disabled]:focus,.btn-warning[disabled]:hover,fieldset[disabled] .btn-warning.focus,fieldset[disabled] .btn-warning:focus,fieldset[disabled] .btn-warning:hover{background-color:#f0ad4e;border-color:#eea236}
 .btn-warning .badge{color:#f0ad4e;background-color:#fff}
 .btn-danger{color:#fff;background-color:#d9534f;border-color:#d43f3a}
 .btn-danger.focus,.btn-danger:focus{color:#fff;background-color:#c9302c;border-color:#761c19}
 .btn-danger.active,.btn-danger:active,.btn-danger:hover,.open>.dropdown-toggle.btn-danger{color:#fff;background-color:#c9302c;border-color:#ac2925}
 .btn-danger.active.focus,.btn-danger.active:focus,.btn-danger.active:hover,.btn-danger:active.focus,.btn-danger:active:focus,.btn-danger:active:hover,.open>.dropdown-toggle.btn-danger.focus,.open>.dropdown-toggle.btn-danger:focus,.open>.dropdown-toggle.btn-danger:hover{color:#fff;background-color:#ac2925;border-color:#761c19}
+.btn-danger.active,.btn-danger:active,.open>.dropdown-toggle.btn-danger{background-image:none}
 .btn-danger.disabled.focus,.btn-danger.disabled:focus,.btn-danger.disabled:hover,.btn-danger[disabled].focus,.btn-danger[disabled]:focus,.btn-danger[disabled]:hover,fieldset[disabled] .btn-danger.focus,fieldset[disabled] .btn-danger:focus,fieldset[disabled] .btn-danger:hover{background-color:#d9534f;border-color:#d43f3a}
 .btn-danger .badge{color:#d9534f;background-color:#fff}
 .btn-link{font-weight:400;color:#337ab7;border-radius:0}
@@ -809,7 +815,6 @@ a.btn.disabled,fieldset[disabled] a.btn{pointer-events:none}
 .btn-group-sm>.btn,.btn-sm{padding:5px 10px;font-size:12px;line-height:1.5;border-radius:3px}
 .btn-group-xs>.btn,.btn-xs{padding:1px 5px;font-size:12px;line-height:1.5;border-radius:3px}
 .btn-block{display:block;width:100%}
-.btn-block+.btn-block{margin-top:5px}
 input[type=button].btn-block,input[type=reset].btn-block,input[type=submit].btn-block{width:100%}
 .fade{opacity:0;-webkit-transition:opacity .15s linear;-o-transition:opacity .15s linear;transition:opacity .15s linear}
 .fade.in{opacity:1}
@@ -831,7 +836,7 @@ tbody.collapse.in{display:table-row-group}
 .dropdown-menu>li>a:focus,.dropdown-menu>li>a:hover{color:#262626;text-decoration:none;background-color:#f5f5f5}
 .dropdown-menu>.active>a,.dropdown-menu>.active>a:focus,.dropdown-menu>.active>a:hover{color:#fff;text-decoration:none;background-color:#337ab7;outline:0}
 .dropdown-menu>.disabled>a,.dropdown-menu>.disabled>a:focus,.dropdown-menu>.disabled>a:hover{color:#777}
-.dropdown-menu>.disabled>a:focus,.dropdown-menu>.disabled>a:hover{text-decoration:none;cursor:not-allowed;background-color:transparent;filter:progid:DXImageTransform.Microsoft.gradient(enabled=false)}
+.dropdown-menu>.disabled>a:focus,.dropdown-menu>.disabled>a:hover{text-decoration:none;cursor:not-allowed;background-color:transparent;background-image:none;filter:progid:DXImageTransform.Microsoft.gradient(enabled=false)}
 .open>.dropdown-menu{display:block}
 .open>a{outline:0}
 .dropdown-menu-left{right:auto;left:0}
@@ -964,7 +969,7 @@ select[multiple].input-group-sm>.form-control,select[multiple].input-group-sm>.i
 .navbar-fixed-bottom,.navbar-fixed-top,.navbar-static-top{border-radius:0}
 .navbar>.container .navbar-brand,.navbar>.container-fluid .navbar-brand{margin-left:-15px}
 }
-.navbar-toggle{position:relative;float:right;padding:9px 10px;margin-top:8px;margin-right:15px;margin-bottom:8px;background-color:transparent;border:1px solid transparent;border-radius:4px}
+.navbar-toggle{position:relative;float:right;padding:9px 10px;margin-top:8px;margin-right:15px;margin-bottom:8px;background-color:transparent;background-image:none;border:1px solid transparent;border-radius:4px}
 .navbar-toggle:focus{outline:0}
 .navbar-toggle .icon-bar{display:block;width:22px;height:2px;border-radius:1px}
 .navbar-toggle .icon-bar+.icon-bar{margin-top:4px}
@@ -1080,8 +1085,8 @@ select[multiple].input-group-sm>.form-control,select[multiple].input-group-sm>.i
 .pager .next>a,.pager .next>span{float:right}
 .pager .previous>a,.pager .previous>span{float:left}
 .pager .disabled>a,.pager .disabled>a:focus,.pager .disabled>a:hover,.pager .disabled>span{color:#777;cursor:not-allowed;background-color:#fff}
-a.badge:focus,a.badge:hover,a.label:focus,a.label:hover{color:#fff;cursor:pointer;text-decoration:none}
 .label{display:inline;padding:.2em .6em .3em;font-size:75%;color:#fff;border-radius:.25em}
+a.label:focus,a.label:hover{color:#fff;text-decoration:none;cursor:pointer}
 .label:empty{display:none}
 .label-default{background-color:#777}
 .label-default[href]:focus,.label-default[href]:hover{background-color:#5e5e5e}
@@ -1099,6 +1104,7 @@ a.badge:focus,a.badge:hover,a.label:focus,a.label:hover{color:#fff;cursor:pointe
 .badge:empty{display:none}
 .media-object,.thumbnail{display:block}
 .btn-group-xs>.btn .badge,.btn-xs .badge{top:0;padding:1px 5px}
+a.badge:focus,a.badge:hover{color:#fff;text-decoration:none;cursor:pointer}
 .list-group-item.active>.badge,.nav-pills>.active>a>.badge{color:#337ab7;background-color:#fff}
 .jumbotron,.jumbotron .h1,.jumbotron h1{color:inherit}
 .list-group-item>.badge{float:right}
@@ -1383,6 +1389,7 @@ button.close{-webkit-appearance:none;padding:0;cursor:pointer;background:0 0;bor
 .carousel-indicators{bottom:20px}
 }
 .btn-group-vertical>.btn-group:after,.btn-group-vertical>.btn-group:before,.btn-toolbar:after,.btn-toolbar:before,.clearfix:after,.clearfix:before,.container-fluid:after,.container-fluid:before,.container:after,.container:before,.dl-horizontal dd:after,.dl-horizontal dd:before,.form-horizontal .form-group:after,.form-horizontal .form-group:before,.modal-footer:after,.modal-footer:before,.modal-header:after,.modal-header:before,.nav:after,.nav:before,.navbar-collapse:after,.navbar-collapse:before,.navbar-header:after,.navbar-header:before,.navbar:after,.navbar:before,.pager:after,.pager:before,.panel-body:after,.panel-body:before,.row:after,.row:before{display:table;content:" "}
+.btn-group-vertical>.btn-group:after,.btn-toolbar:after,.clearfix:after,.container-fluid:after,.container:after,.dl-horizontal dd:after,.form-horizontal .form-group:after,.modal-footer:after,.modal-header:after,.nav:after,.navbar-collapse:after,.navbar-header:after,.navbar:after,.pager:after,.panel-body:after,.row:after{clear:both}
 .center-block{display:block;margin-right:auto;margin-left:auto}
 .pull-right{float:right!important}
 .pull-left{float:left!important}
@@ -1529,6 +1536,7 @@ table.dataTable thead .sorting:after{content:"\f0dc";float:right;font-family:fon
 .timeline:before{position:absolute;top:0;bottom:0;left:50%;width:3px;margin-left:-1.5px;background-color:#eee}
 .timeline>li{position:relative;margin-bottom:20px}
 .timeline>li:after,.timeline>li:before{display:table}
+.timeline>li:after{clear:both}
 .timeline>li>.timeline-panel{float:left;position:relative;width:46%;padding:20px;border:1px solid #d4d4d4;border-radius:2px;-webkit-box-shadow:0 1px 6px rgba(0,0,0,.175);box-shadow:0 1px 6px rgba(0,0,0,.175)}
 .arrow,.plus-minus,.plus-times,.timeline>li.timeline-inverted>.timeline-panel{float:right}
 .timeline>li>.timeline-panel:before{display:inline-block;position:absolute;top:26px;right:-15px;border-top:15px solid transparent;border-right:0 solid #ccc;border-bottom:15px solid transparent;border-left:15px solid #ccc}
@@ -1577,7 +1585,7 @@ ul.timeline>li>.timeline-panel:after{right:auto;left:-14px;border-right-width:14
 .fa-li.fa-lg{left:-1.85714286em}
 .fa-border{padding:.2em .25em .15em;border:.08em solid #eee;border-radius:.1em}
 .fa-pull-left{float:left}
-.fa-pull-right{float:right}
+.datepicker-rtl table tr td span,.fa-pull-right{float:right}
 .fa-spin{-webkit-animation:fa-spin 2s infinite linear;animation:fa-spin 2s infinite linear}
 .fa-pulse{-webkit-animation:fa-spin 1s infinite steps(8);animation:fa-spin 1s infinite steps(8)}
 @-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}
@@ -2235,5 +2243,95 @@ ul.timeline>li>.timeline-panel:after{right:auto;left:-14px;border-right-width:14
 .sr-only-focusable:active,.sr-only-focusable:focus{position:static;width:auto;height:auto;margin:0;overflow:visible;clip:auto}
 .morris-hover{position:absolute;z-index:1000}
 .morris-hover.morris-default-style{border-radius:10px;padding:6px;color:#666;background:rgba(255,255,255,.8);border:2px solid rgba(230,230,230,.8);font-family:sans-serif;font-size:12px;text-align:center}
+.datepicker-dropdown:after,.datepicker-dropdown:before{content:'';display:inline-block;border-top:0;position:absolute}
 .morris-hover.morris-default-style .morris-hover-row-label{font-weight:700;margin:.25em 0}
 .morris-hover.morris-default-style .morris-hover-point{white-space:nowrap;margin:.1em 0}
+/*!
+ * Datepicker for Bootstrap v1.7.1 (https://github.com/uxsolutions/bootstrap-datepicker)
+ *
+ * Licensed under the Apache License v2.0 (http://www.apache.org/licenses/LICENSE-2.0)
+ */
+.datepicker{border-radius:4px;direction:ltr}
+.datepicker-inline{width:220px}
+.datepicker-rtl{direction:rtl}
+.datepicker-rtl.dropdown-menu{left:auto}
+.datepicker-dropdown{top:0;left:0;padding:4px}
+.datepicker-dropdown:before{border-left:7px solid transparent;border-right:7px solid transparent;border-bottom:7px solid rgba(0,0,0,.15);border-bottom-color:rgba(0,0,0,.2)}
+.datepicker-dropdown:after{border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid #fff}
+.datepicker-dropdown.datepicker-orient-left:before{left:6px}
+.datepicker-dropdown.datepicker-orient-left:after{left:7px}
+.datepicker-dropdown.datepicker-orient-right:before{right:6px}
+.datepicker-dropdown.datepicker-orient-right:after{right:7px}
+.datepicker-dropdown.datepicker-orient-bottom:before{top:-7px}
+.datepicker-dropdown.datepicker-orient-bottom:after{top:-6px}
+.datepicker-dropdown.datepicker-orient-top:before{bottom:-7px;border-bottom:0;border-top:7px solid rgba(0,0,0,.15)}
+.datepicker-dropdown.datepicker-orient-top:after{bottom:-6px;border-bottom:0;border-top:6px solid #fff}
+.datepicker table{margin:0;-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+.datepicker table tr td,.datepicker table tr th{text-align:center;width:30px;height:30px;border-radius:4px;border:none}
+.table-striped .datepicker table tr td,.table-striped .datepicker table tr th{background-color:transparent}
+.datepicker table tr td.new,.datepicker table tr td.old{color:#777}
+.datepicker table tr td.day:hover,.datepicker table tr td.focused{background:#eee;cursor:pointer}
+.datepicker table tr td.disabled,.datepicker table tr td.disabled:hover{background:0 0;color:#777;cursor:default}
+.datepicker table tr td.highlighted{color:#000;background-color:#d9edf7;border-color:#85c5e5;border-radius:0}
+.datepicker table tr td.highlighted.focus,.datepicker table tr td.highlighted:focus{color:#000;background-color:#afd9ee;border-color:#298fc2}
+.datepicker table tr td.highlighted.active,.datepicker table tr td.highlighted:active,.datepicker table tr td.highlighted:hover{color:#000;background-color:#afd9ee;border-color:#52addb}
+.datepicker table tr td.highlighted.active.focus,.datepicker table tr td.highlighted.active:focus,.datepicker table tr td.highlighted.active:hover,.datepicker table tr td.highlighted:active.focus,.datepicker table tr td.highlighted:active:focus,.datepicker table tr td.highlighted:active:hover{color:#000;background-color:#91cbe8;border-color:#298fc2}
+.datepicker table tr td.highlighted.disabled.focus,.datepicker table tr td.highlighted.disabled:focus,.datepicker table tr td.highlighted.disabled:hover,.datepicker table tr td.highlighted[disabled].focus,.datepicker table tr td.highlighted[disabled]:focus,.datepicker table tr td.highlighted[disabled]:hover,fieldset[disabled] .datepicker table tr td.highlighted.focus,fieldset[disabled] .datepicker table tr td.highlighted:focus,fieldset[disabled] .datepicker table tr td.highlighted:hover{background-color:#d9edf7;border-color:#85c5e5}
+.datepicker table tr td.highlighted.focused{background:#afd9ee}
+.datepicker table tr td.highlighted.disabled,.datepicker table tr td.highlighted.disabled:active{background:#d9edf7;color:#777}
+.datepicker table tr td.today{color:#000;background-color:#ffdb99;border-color:#ffb733}
+.datepicker table tr td.today.focus,.datepicker table tr td.today:focus{color:#000;background-color:#ffc966;border-color:#b37400}
+.datepicker table tr td.today.active,.datepicker table tr td.today:active,.datepicker table tr td.today:hover{color:#000;background-color:#ffc966;border-color:#f59e00}
+.datepicker table tr td.today.active.focus,.datepicker table tr td.today.active:focus,.datepicker table tr td.today.active:hover,.datepicker table tr td.today:active.focus,.datepicker table tr td.today:active:focus,.datepicker table tr td.today:active:hover{color:#000;background-color:#ffbc42;border-color:#b37400}
+.datepicker table tr td.today.disabled.focus,.datepicker table tr td.today.disabled:focus,.datepicker table tr td.today.disabled:hover,.datepicker table tr td.today[disabled].focus,.datepicker table tr td.today[disabled]:focus,.datepicker table tr td.today[disabled]:hover,fieldset[disabled] .datepicker table tr td.today.focus,fieldset[disabled] .datepicker table tr td.today:focus,fieldset[disabled] .datepicker table tr td.today:hover{background-color:#ffdb99;border-color:#ffb733}
+.datepicker table tr td.today.focused{background:#ffc966}
+.datepicker table tr td.today.disabled,.datepicker table tr td.today.disabled:active{background:#ffdb99;color:#777}
+.datepicker table tr td.range{color:#000;background-color:#eee;border-color:#bbb;border-radius:0}
+.datepicker table tr td.range.focus,.datepicker table tr td.range:focus{color:#000;background-color:#d5d5d5;border-color:#7c7c7c}
+.datepicker table tr td.range.active,.datepicker table tr td.range:active,.datepicker table tr td.range:hover{color:#000;background-color:#d5d5d5;border-color:#9d9d9d}
+.datepicker table tr td.range.active.focus,.datepicker table tr td.range.active:focus,.datepicker table tr td.range.active:hover,.datepicker table tr td.range:active.focus,.datepicker table tr td.range:active:focus,.datepicker table tr td.range:active:hover{color:#000;background-color:#c3c3c3;border-color:#7c7c7c}
+.datepicker table tr td.range.disabled.focus,.datepicker table tr td.range.disabled:focus,.datepicker table tr td.range.disabled:hover,.datepicker table tr td.range[disabled].focus,.datepicker table tr td.range[disabled]:focus,.datepicker table tr td.range[disabled]:hover,fieldset[disabled] .datepicker table tr td.range.focus,fieldset[disabled] .datepicker table tr td.range:focus,fieldset[disabled] .datepicker table tr td.range:hover{background-color:#eee;border-color:#bbb}
+.datepicker table tr td.range.focused{background:#d5d5d5}
+.datepicker table tr td.range.disabled,.datepicker table tr td.range.disabled:active{background:#eee;color:#777}
+.datepicker table tr td.range.highlighted{color:#000;background-color:#e4eef3;border-color:#9dc1d3}
+.datepicker table tr td.range.highlighted.focus,.datepicker table tr td.range.highlighted:focus{color:#000;background-color:#c1d7e3;border-color:#4b88a6}
+.datepicker table tr td.range.highlighted.active,.datepicker table tr td.range.highlighted:active,.datepicker table tr td.range.highlighted:hover{color:#000;background-color:#c1d7e3;border-color:#73a6c0}
+.datepicker table tr td.range.highlighted.active.focus,.datepicker table tr td.range.highlighted.active:focus,.datepicker table tr td.range.highlighted.active:hover,.datepicker table tr td.range.highlighted:active.focus,.datepicker table tr td.range.highlighted:active:focus,.datepicker table tr td.range.highlighted:active:hover{color:#000;background-color:#a8c8d8;border-color:#4b88a6}
+.datepicker table tr td.range.highlighted.disabled.focus,.datepicker table tr td.range.highlighted.disabled:focus,.datepicker table tr td.range.highlighted.disabled:hover,.datepicker table tr td.range.highlighted[disabled].focus,.datepicker table tr td.range.highlighted[disabled]:focus,.datepicker table tr td.range.highlighted[disabled]:hover,fieldset[disabled] .datepicker table tr td.range.highlighted.focus,fieldset[disabled] .datepicker table tr td.range.highlighted:focus,fieldset[disabled] .datepicker table tr td.range.highlighted:hover{background-color:#e4eef3;border-color:#9dc1d3}
+.datepicker table tr td.range.highlighted.focused{background:#c1d7e3}
+.datepicker table tr td.range.highlighted.disabled,.datepicker table tr td.range.highlighted.disabled:active{background:#e4eef3;color:#777}
+.datepicker table tr td.range.today{color:#000;background-color:#f7ca77;border-color:#f1a417}
+.datepicker table tr td.range.today.focus,.datepicker table tr td.range.today:focus{color:#000;background-color:#f4b747;border-color:#815608}
+.datepicker table tr td.range.today.active,.datepicker table tr td.range.today:active,.datepicker table tr td.range.today:hover{color:#000;background-color:#f4b747;border-color:#bf800c}
+.datepicker table tr td.range.today.active.focus,.datepicker table tr td.range.today.active:focus,.datepicker table tr td.range.today.active:hover,.datepicker table tr td.range.today:active.focus,.datepicker table tr td.range.today:active:focus,.datepicker table tr td.range.today:active:hover{color:#000;background-color:#f2aa25;border-color:#815608}
+.datepicker table tr td.range.today.disabled.focus,.datepicker table tr td.range.today.disabled:focus,.datepicker table tr td.range.today.disabled:hover,.datepicker table tr td.range.today[disabled].focus,.datepicker table tr td.range.today[disabled]:focus,.datepicker table tr td.range.today[disabled]:hover,fieldset[disabled] .datepicker table tr td.range.today.focus,fieldset[disabled] .datepicker table tr td.range.today:focus,fieldset[disabled] .datepicker table tr td.range.today:hover{background-color:#f7ca77;border-color:#f1a417}
+.datepicker table tr td.range.today.disabled,.datepicker table tr td.range.today.disabled:active{background:#f7ca77;color:#777}
+.datepicker table tr td.selected,.datepicker table tr td.selected.highlighted{color:#fff;background-color:#777;border-color:#555;text-shadow:0 -1px 0 rgba(0,0,0,.25)}
+.datepicker table tr td.selected.focus,.datepicker table tr td.selected.highlighted.focus,.datepicker table tr td.selected.highlighted:focus,.datepicker table tr td.selected:focus{color:#fff;background-color:#5e5e5e;border-color:#161616}
+.datepicker table tr td.selected.active,.datepicker table tr td.selected.highlighted.active,.datepicker table tr td.selected.highlighted:active,.datepicker table tr td.selected.highlighted:hover,.datepicker table tr td.selected:active,.datepicker table tr td.selected:hover{color:#fff;background-color:#5e5e5e;border-color:#373737}
+.datepicker table tr td.selected.active.focus,.datepicker table tr td.selected.active:focus,.datepicker table tr td.selected.active:hover,.datepicker table tr td.selected.highlighted.active.focus,.datepicker table tr td.selected.highlighted.active:focus,.datepicker table tr td.selected.highlighted.active:hover,.datepicker table tr td.selected.highlighted:active.focus,.datepicker table tr td.selected.highlighted:active:focus,.datepicker table tr td.selected.highlighted:active:hover,.datepicker table tr td.selected:active.focus,.datepicker table tr td.selected:active:focus,.datepicker table tr td.selected:active:hover{color:#fff;background-color:#4c4c4c;border-color:#161616}
+.datepicker table tr td.selected.disabled.focus,.datepicker table tr td.selected.disabled:focus,.datepicker table tr td.selected.disabled:hover,.datepicker table tr td.selected.highlighted.disabled.focus,.datepicker table tr td.selected.highlighted.disabled:focus,.datepicker table tr td.selected.highlighted.disabled:hover,.datepicker table tr td.selected.highlighted[disabled].focus,.datepicker table tr td.selected.highlighted[disabled]:focus,.datepicker table tr td.selected.highlighted[disabled]:hover,.datepicker table tr td.selected[disabled].focus,.datepicker table tr td.selected[disabled]:focus,.datepicker table tr td.selected[disabled]:hover,fieldset[disabled] .datepicker table tr td.selected.focus,fieldset[disabled] .datepicker table tr td.selected.highlighted.focus,fieldset[disabled] .datepicker table tr td.selected.highlighted:focus,fieldset[disabled] .datepicker table tr td.selected.highlighted:hover,fieldset[disabled] .datepicker table tr td.selected:focus,fieldset[disabled] .datepicker table tr td.selected:hover{background-color:#777;border-color:#555}
+.datepicker table tr td.active,.datepicker table tr td.active.highlighted{color:#fff;background-color:#337ab7;border-color:#2e6da4;text-shadow:0 -1px 0 rgba(0,0,0,.25)}
+.datepicker table tr td.active.focus,.datepicker table tr td.active.highlighted.focus,.datepicker table tr td.active.highlighted:focus,.datepicker table tr td.active:focus{color:#fff;background-color:#286090;border-color:#122b40}
+.datepicker table tr td.active.active,.datepicker table tr td.active.highlighted.active,.datepicker table tr td.active.highlighted:active,.datepicker table tr td.active.highlighted:hover,.datepicker table tr td.active:active,.datepicker table tr td.active:hover{color:#fff;background-color:#286090;border-color:#204d74}
+.datepicker table tr td.active.active.focus,.datepicker table tr td.active.active:focus,.datepicker table tr td.active.active:hover,.datepicker table tr td.active.highlighted.active.focus,.datepicker table tr td.active.highlighted.active:focus,.datepicker table tr td.active.highlighted.active:hover,.datepicker table tr td.active.highlighted:active.focus,.datepicker table tr td.active.highlighted:active:focus,.datepicker table tr td.active.highlighted:active:hover,.datepicker table tr td.active:active.focus,.datepicker table tr td.active:active:focus,.datepicker table tr td.active:active:hover{color:#fff;background-color:#204d74;border-color:#122b40}
+.datepicker table tr td.active.disabled.focus,.datepicker table tr td.active.disabled:focus,.datepicker table tr td.active.disabled:hover,.datepicker table tr td.active.highlighted.disabled.focus,.datepicker table tr td.active.highlighted.disabled:focus,.datepicker table tr td.active.highlighted.disabled:hover,.datepicker table tr td.active.highlighted[disabled].focus,.datepicker table tr td.active.highlighted[disabled]:focus,.datepicker table tr td.active.highlighted[disabled]:hover,.datepicker table tr td.active[disabled].focus,.datepicker table tr td.active[disabled]:focus,.datepicker table tr td.active[disabled]:hover,fieldset[disabled] .datepicker table tr td.active.focus,fieldset[disabled] .datepicker table tr td.active.highlighted.focus,fieldset[disabled] .datepicker table tr td.active.highlighted:focus,fieldset[disabled] .datepicker table tr td.active.highlighted:hover,fieldset[disabled] .datepicker table tr td.active:focus,fieldset[disabled] .datepicker table tr td.active:hover{background-color:#337ab7;border-color:#2e6da4}
+.datepicker table tr td span{display:block;width:23%;height:54px;line-height:54px;float:left;margin:1%;cursor:pointer;border-radius:4px}
+.datepicker table tr td span.focused,.datepicker table tr td span:hover{background:#eee}
+.datepicker table tr td span.disabled,.datepicker table tr td span.disabled:hover{background:0 0;color:#777;cursor:default}
+.datepicker .datepicker-switch,.datepicker .next,.datepicker .prev,.datepicker tfoot tr th,.input-group.date .input-group-addon{cursor:pointer}
+.datepicker table tr td span.active,.datepicker table tr td span.active.disabled,.datepicker table tr td span.active.disabled:hover,.datepicker table tr td span.active:hover{color:#fff;background-color:#337ab7;border-color:#2e6da4;text-shadow:0 -1px 0 rgba(0,0,0,.25)}
+.datepicker table tr td span.active.disabled.focus,.datepicker table tr td span.active.disabled:focus,.datepicker table tr td span.active.disabled:hover.focus,.datepicker table tr td span.active.disabled:hover:focus,.datepicker table tr td span.active.focus,.datepicker table tr td span.active:focus,.datepicker table tr td span.active:hover.focus,.datepicker table tr td span.active:hover:focus{color:#fff;background-color:#286090;border-color:#122b40}
+.datepicker table tr td span.active.active,.datepicker table tr td span.active.disabled.active,.datepicker table tr td span.active.disabled:active,.datepicker table tr td span.active.disabled:hover,.datepicker table tr td span.active.disabled:hover.active,.datepicker table tr td span.active.disabled:hover:active,.datepicker table tr td span.active.disabled:hover:hover,.datepicker table tr td span.active:active,.datepicker table tr td span.active:hover,.datepicker table tr td span.active:hover.active,.datepicker table tr td span.active:hover:active,.datepicker table tr td span.active:hover:hover{color:#fff;background-color:#286090;border-color:#204d74}
+.datepicker table tr td span.active.active.focus,.datepicker table tr td span.active.active:focus,.datepicker table tr td span.active.active:hover,.datepicker table tr td span.active.disabled.active.focus,.datepicker table tr td span.active.disabled.active:focus,.datepicker table tr td span.active.disabled.active:hover,.datepicker table tr td span.active.disabled:active.focus,.datepicker table tr td span.active.disabled:active:focus,.datepicker table tr td span.active.disabled:active:hover,.datepicker table tr td span.active.disabled:hover.active.focus,.datepicker table tr td span.active.disabled:hover.active:focus,.datepicker table tr td span.active.disabled:hover.active:hover,.datepicker table tr td span.active.disabled:hover:active.focus,.datepicker table tr td span.active.disabled:hover:active:focus,.datepicker table tr td span.active.disabled:hover:active:hover,.datepicker table tr td span.active:active.focus,.datepicker table tr td span.active:active:focus,.datepicker table tr td span.active:active:hover,.datepicker table tr td span.active:hover.active.focus,.datepicker table tr td span.active:hover.active:focus,.datepicker table tr td span.active:hover.active:hover,.datepicker table tr td span.active:hover:active.focus,.datepicker table tr td span.active:hover:active:focus,.datepicker table tr td span.active:hover:active:hover{color:#fff;background-color:#204d74;border-color:#122b40}
+.datepicker table tr td span.active.disabled.disabled.focus,.datepicker table tr td span.active.disabled.disabled:focus,.datepicker table tr td span.active.disabled.disabled:hover,.datepicker table tr td span.active.disabled.focus,.datepicker table tr td span.active.disabled:focus,.datepicker table tr td span.active.disabled:hover,.datepicker table tr td span.active.disabled:hover.disabled.focus,.datepicker table tr td span.active.disabled:hover.disabled:focus,.datepicker table tr td span.active.disabled:hover.disabled:hover,.datepicker table tr td span.active.disabled:hover[disabled].focus,.datepicker table tr td span.active.disabled:hover[disabled]:focus,.datepicker table tr td span.active.disabled:hover[disabled]:hover,.datepicker table tr td span.active.disabled[disabled].focus,.datepicker table tr td span.active.disabled[disabled]:focus,.datepicker table tr td span.active.disabled[disabled]:hover,.datepicker table tr td span.active:hover.disabled.focus,.datepicker table tr td span.active:hover.disabled:focus,.datepicker table tr td span.active:hover.disabled:hover,.datepicker table tr td span.active:hover[disabled].focus,.datepicker table tr td span.active:hover[disabled]:focus,.datepicker table tr td span.active:hover[disabled]:hover,.datepicker table tr td span.active[disabled].focus,.datepicker table tr td span.active[disabled]:focus,.datepicker table tr td span.active[disabled]:hover,fieldset[disabled] .datepicker table tr td span.active.disabled.focus,fieldset[disabled] .datepicker table tr td span.active.disabled:focus,fieldset[disabled] .datepicker table tr td span.active.disabled:hover,fieldset[disabled] .datepicker table tr td span.active.disabled:hover.focus,fieldset[disabled] .datepicker table tr td span.active.disabled:hover:focus,fieldset[disabled] .datepicker table tr td span.active.disabled:hover:hover,fieldset[disabled] .datepicker table tr td span.active.focus,fieldset[disabled] .datepicker table tr td span.active:focus,fieldset[disabled] .datepicker table tr td span.active:hover,fieldset[disabled] .datepicker table tr td span.active:hover.focus,fieldset[disabled] .datepicker table tr td span.active:hover:focus,fieldset[disabled] .datepicker table tr td span.active:hover:hover{background-color:#337ab7;border-color:#2e6da4}
+.datepicker table tr td span.new,.datepicker table tr td span.old{color:#777}
+.datepicker .datepicker-switch{width:145px}
+.datepicker .datepicker-switch:hover,.datepicker .next:hover,.datepicker .prev:hover,.datepicker tfoot tr th:hover{background:#eee}
+.datepicker .next.disabled,.datepicker .prev.disabled{visibility:hidden}
+.datepicker .cw{font-size:10px;width:12px;padding:0 2px 0 5px;vertical-align:middle}
+.input-daterange{width:100%}
+.input-daterange input{text-align:center}
+.input-daterange input:first-child{border-radius:3px 0 0 3px}
+.input-daterange input:last-child{border-radius:0 3px 3px 0}
+.input-daterange .input-group-addon{width:auto;min-width:16px;padding:4px 5px;line-height:1.42857143;text-shadow:0 1px 0 #fff;border-width:1px 0;margin-left:-5px;margin-right:-5px}

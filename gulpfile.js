@@ -20,7 +20,8 @@ gulp.task('concatLibCss', function(){
     './node_modules/startbootstrap-sb-admin-2-gh-pages/dist/css/sb-admin-2.css',
     './node_modules/startbootstrap-sb-admin-2-gh-pages/vendor/metisMenu/metisMenu.css',
     './node_modules/startbootstrap-sb-admin-2-gh-pages/vendor/font-awesome/css/font-awesome.css',
-    './node_modules/startbootstrap-sb-admin-2-gh-pages/vendor/morrisjs/morris.css'
+    './node_modules/startbootstrap-sb-admin-2-gh-pages/vendor/morrisjs/morris.css',
+    './node_modules/bootstrap-datepicker/dist/css/bootstrap-datepicker3.css'
   ]).pipe(concat('lib.css')).pipe(gulp.dest(css_dest_path));
 });
 
@@ -39,7 +40,8 @@ gulp.task('concatLibJs', function(){
     './node_modules/bootstrap/dist/js/bootstrap.js',
     './node_modules/startbootstrap-sb-admin-2-gh-pages/vendor/metisMenu/metisMenu.js',
     './node_modules/startbootstrap-sb-admin-2-gh-pages/dist/js/sb-admin-2.js',
-    './node_modules/moment/moment.js'
+    './node_modules/moment/moment.js',
+    './node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.js'
   ]).pipe(concat('lib.js')).pipe(gulp.dest(js_dest_path));
 });
 
