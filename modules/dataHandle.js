@@ -56,8 +56,8 @@ exports.insertContainerInfo = function(_containerInfo, _done) {
   });
 }
 
-exports.countSeq = function(_containerStatus, _dataSeqTime, _done) {
-  var _values = [_containerStatus, _dataSeqTime];
+exports.countSeq = function(_containerStatus, _done) {
+  var _values = [_containerStatus];
   db.get().query('SELECT COUNT(CONTAINER_STATUS) AS COUNT FROM CONTAINER_INFO WHERE CONTAINER_STATUS = ? AND DATE(INSERT_DATE) = CURDATE();', _values, function(err, rows){
     if (err) {
       return _done(err);
@@ -66,9 +66,19 @@ exports.countSeq = function(_containerStatus, _dataSeqTime, _done) {
   });
 };
 
-exports.queryData = function(_containerStatus, _dataSeqTime, _done) {
-  var _values = [_containerStatus, _dataSeqTime];
+exports.queryData = function(_containerStatus, _done) {
+  var _values = [_containerStatus];
   db.get().query('SELECT * FROM CONTAINER_INFO WHERE CONTAINER_STATUS = ? AND DATE(INSERT_DATE) = CURDATE();', _values, function(err, rows){
+    if (err) {
+      return _done(err);
+    }
+    _done(null, rows);
+  });
+};
+
+exports.queryDataByDate = function(_containerStatus, _startDate, _endDate,_done) {
+  var _values = [_startDate, _endDate, _containerStatus];
+  db.get().query('SELECT * FROM CONTAINER_INFO WHERE INSERT_DATE BETWEEN ? AND ? AND CONTAINER_STATUS = ?', _values, function(err, rows){
     if (err) {
       return _done(err);
     }

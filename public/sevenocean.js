@@ -2,7 +2,6 @@ $(document).ready(function() {
   $('#start_date, #end_date').datepicker({
       autoclose: true
   });
-  
   $('#start_date').on('changeDate', function(e){
       var _this = $(this);
       var _startDate = moment(_this.val());
@@ -22,4 +21,9 @@ $(document).ready(function() {
           $('#start_date').datepicker('update', _endDate.toDate());
       }
   });
+  
+  //  $('#query_by_date').on('click', function(){
+  //    var _this = $(this);
+  //    var _queryForm = _this.parents('form');
+  //  });
 });
