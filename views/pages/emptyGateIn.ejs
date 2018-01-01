@@ -80,7 +80,7 @@
         </div>
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <form class="form-horizontal" id="onHireForm" name="onHireForm">
+            <form class="form-horizontal container-form" id="emptyGateInForm" name="emptyGateInForm" action="emptyGateIn" method="post">
               <!--{{{-->
               <div class="row">
                 <div class="form-group col-lg-6">
@@ -149,6 +149,51 @@
               </div>
               <!--}}}-->
             </form>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 submit-form">
+            <form class="form-inline"  id="emptyGateInFormQueryByDate" name="emptyGateInFormQueryByDate" action="emptyGateIn" method="post">
+              <div class="form-group">
+                <div class="input-group input-daterange">
+                  <input type="text" class="form-control" id="start_date" name="start_date" placeholder="START DATE" data-date-format="yyyy/mm/dd">
+                  <div class="input-group-addon">TO</div>
+                  <input type="text" class="form-control" id="end_date" name="end_date" placeholder="END DATE" data-date-format="yyyy/mm/dd">
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary" id="query_by_date">查詢</button>
+            </form>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 data-table">
+            <div>
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>CONTAINER NO.</th>
+                    <th>TYPE</th>
+                    <th>LOADING PORT</th>
+                    <th>TRANSACTION TIME</th>
+                    <th>DEPOT</th>
+                    <th>ACCEPTANCE REF.</th>
+                  </tr>
+                </thead>
+                <tbody>
+                <% container_data.forEach(function(_containerItem) {%>
+                  <tr>
+                    <td><%= _containerItem.CONTAINER_NO %></td>
+                    <td><%= _containerItem.CONTAINER_TYPE %></td>
+                    <td><%= _containerItem.LOADING_PORT %></td>
+                    <td><%= _containerItem.TRANSACTION_TIME %></td>
+                    <td><%= _containerItem.DEPOT %></td>
+                    <td><%= _containerItem.ACCEPTANCE_REF %></td>
+                  </tr>
+                <% });%>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>

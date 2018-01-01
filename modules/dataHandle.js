@@ -49,7 +49,10 @@ exports.insertContainerInfo = function(_containerInfo, _done) {
     _containerInfo.container_status,
     _containerInfo.data_seq
   ];
+  
   db.get().query('INSERT INTO CONTAINER_INFO (CONTAINER_NO, CONTAINER_TYPE, HDS_LEASE_REF, LOADING_PORT, LESSOR_DEPOT, TRANSACTION_TIME, LEASE_COMPANY, HDS_DEPOT, DEPOT, SHIPPER, FORWARDEF, BOOKING_REF_NO, HAULER_CO, RELEASE_REF_NO, FULL_EMPTY, SEAL_NO, OWNER_TYPE, PHYSICAL_STATUS, DESTINATION, VESSEL, VOYAGE, B_L_NO, CONSIGNEE, NOTIFY, WEIGHT, BAY, SLOT, CARRIER_TYPE, DISCHARGE_PORT, CARRIER_ID, ACCEPTANCE_REF, CONTAINER_STATUS, DATA_SEQ, INSERT_DATE) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW()) ', _values, function(_err, _result){ if (_err) {
+      console.log(_values);
+      console.log(_err);
       return _done('Indsert error.');
     }
     _done(null, _result);

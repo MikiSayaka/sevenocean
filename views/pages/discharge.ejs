@@ -80,7 +80,7 @@
         </div>
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <form class="form-horizontal" id="onHireForm" name="onHireForm">
+            <form class="form-horizontal container-form" id="dischargeForm" name="dischargeForm" action="discharge" method="post">
               <!--{{{-->
               <div class="row">
                 <div class="form-group col-lg-6">
@@ -110,9 +110,9 @@
               <!--{{{-->
               <div class="row">
                 <div class="form-group col-lg-6">
-                  <label for="loading_port" class="col-lg-4 control-label">DISCHARGE PORT</label>
+                  <label for="discharge_port" class="col-lg-4 control-label">DISCHARGE PORT</label>
                   <div class="col-lg-4">
-                    <input type="text" id="loading_port" name="loading_port" class="form-control" placeholder="LOADING PORT">
+                    <input type="text" id="discharge_port" name="discharge_port" class="form-control" placeholder="LOADING PORT">
                   </div>
                 </div>
                 <div class="form-group col-lg-6 col-lg-pull-2">
@@ -128,7 +128,7 @@
                 <div class="form-group col-lg-6">
                   <label for="vessel" class="col-lg-4 control-label">VESSEL</label>
                   <div class="col-lg-4">
-                    <input type="text" id="transaction_time" name="transaction_time" class="form-control" placeholder="TRANSACTION TIME">
+                    <input type="text" id="vessel" name="vessel" class="form-control" placeholder="VESSEL">
                   </div>
                 </div>
                 <div class="form-group col-lg-6 col-lg-pull-2">
@@ -221,6 +221,65 @@
               </div>
               <!--}}}-->
             </form>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 submit-form">
+            <form class="form-inline"  id="dischargeFormQueryByDate" name="dischargeFormQueryByDate" action="discharge" method="post">
+              <div class="form-group">
+                <div class="input-group input-daterange">
+                  <input type="text" class="form-control" id="start_date" name="start_date" placeholder="START DATE" data-date-format="yyyy/mm/dd">
+                  <div class="input-group-addon">TO</div>
+                  <input type="text" class="form-control" id="end_date" name="end_date" placeholder="END DATE" data-date-format="yyyy/mm/dd">
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary" id="query_by_date">查詢</button>
+            </form>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 data-table">
+            <div>
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>CONTAINER NO.</th>
+                    <th>TYPE</th>
+                    <th>FULL / EMPTY</th>
+                    <th>DISCHARGE PORT</th>
+                    <th>DESTINATION</th>
+                    <th>VESSEL</th>
+                    <th>TRANSACTION TIME</th>
+                    <th>B/L NO.</th>
+                    <th>DEPOT</th>
+                    <th>CONSIGNEE</th>
+                    <th>NOTIFY</th>
+                    <th>CARRIER TYPE</th>
+                    <th>PHYSICAL STATUS</th>
+                  </tr>
+                </thead>
+                <tbody>
+                <% container_data.forEach(function(_containerItem) {%>
+                  <tr>
+                    <td><%= _containerItem.CONTAINER_NO %></td>
+                    <td><%= _containerItem.CONTAINER_TYPE %></td>
+                    <td><%= _containerItem.FULL_EMPTY %></td>
+                    <td><%= _containerItem.DISCHARGE_PORT %></td>
+                    <td><%= _containerItem.DESTINATION %></td>
+                    <td><%= _containerItem.VESSEL %></td>
+                    <td><%= _containerItem.TRANSACTION_TIME %></td>
+                    <td><%= _containerItem.B_L_NO %></td>
+                    <td><%= _containerItem.DEPOT %></td>
+                    <td><%= _containerItem.CONSIGNEE %></td>
+                    <td><%= _containerItem.NOTIFY %></td>
+                    <td><%= _containerItem.CARRIER_TYPE %></td>
+                    <td><%= _containerItem.PHYSICAL_STATUS %></td>
+                  </tr>
+                <% });%>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>

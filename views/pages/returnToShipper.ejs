@@ -80,7 +80,7 @@
         </div>
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <form class="form-horizontal" id="returnToShipperForm" name="returnToShipperForm">
+            <form class="form-horizontal container-form" id="returnToShipperForm" name="returnToShipperForm" action="returnToShipper" method="post">
               <!--{{{-->
               <div class="row">
                 <div class="form-group col-lg-6">
@@ -146,7 +146,7 @@
               <!--{{{-->
               <div class="row">
                 <div class="form-group col-lg-6">
-                  <label for="booking_ref_no" class="col-lg-4 control-label">BOOKING REF. NO/label>
+                  <label for="booking_ref_no" class="col-lg-4 control-label">BOOKING REF. NO</label>
                   <div class="col-lg-4">
                     <input type="text" id="booking_ref_no" name="booking_ref_no" class="form-control" placeholder="BOOKING REF. NO">
                   </div>
@@ -191,6 +191,61 @@
               </div>
               <!--}}}-->
             </form>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 submit-form">
+            <form class="form-inline"  id="returnToShipperFormQueryByDate" name="returnToShipperFormQueryByDate" action="returnToShipper" method="post">
+              <div class="form-group">
+                <div class="input-group input-daterange">
+                  <input type="text" class="form-control" id="start_date" name="start_date" placeholder="START DATE" data-date-format="yyyy/mm/dd">
+                  <div class="input-group-addon">TO</div>
+                  <input type="text" class="form-control" id="end_date" name="end_date" placeholder="END DATE" data-date-format="yyyy/mm/dd">
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary" id="query_by_date">查詢</button>
+            </form>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 data-table">
+            <div>
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>CONTAINER NO.</th>
+                    <th>TYPE</th>
+                    <th>FULL / EMPTY</th>
+                    <th>LOADING PORT</th>
+                    <th>TRANSACTION TIME</th>
+                    <th>SHIPPER</th>
+                    <th>FORWARDEF</th>
+                    <th>BOOKING REF. NO</th>
+                    <th>SEAL NO.</th>
+                    <th>OWNER TYPE</th>
+                    <th>PHYSICAL STATUS</th>
+                  </tr>
+                </thead>
+                <tbody>
+                <% container_data.forEach(function(_containerItem) {%>
+                  <tr>
+                    <td><%= _containerItem.CONTAINER_NO %></td>
+                    <td><%= _containerItem.CONTAINER_TYPE %></td>
+                    <td><%= _containerItem.FULL_EMPTY %></td>
+                    <td><%= _containerItem.LOADING_PORT %></td>
+                    <td><%= _containerItem.TRANSACTION_TIME %></td>
+                    <td><%= _containerItem.SHIPPER %></td>
+                    <td><%= _containerItem.FORWARDEF %></td>
+                    <td><%= _containerItem.BOOKING_REF_NO %></td>
+                    <td><%= _containerItem.SEAL_NO %></td>
+                    <td><%= _containerItem.OWNER_TYPE %></td>
+                    <td><%= _containerItem.PHYSICAL_STATUS %></td>
+                  </tr>
+                <% });%>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>

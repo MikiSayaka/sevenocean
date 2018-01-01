@@ -80,7 +80,7 @@
         </div>
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <form class="form-horizontal" id="onHireForm" name="onHireForm">
+            <form class="form-horizontal container-form" id="offHireForm" name="offHireForm" action="offHire" method="post">
               <!--{{{-->
               <div class="row">
                 <div class="form-group col-lg-6">
@@ -130,9 +130,9 @@
               <!--{{{-->
               <div class="row">
                 <div class="form-group col-lg-6">
-                  <label for="releaseNo" class="col-lg-4 control-label">RELEASE NO</label>
+                  <label for="release_ref_no" class="col-lg-4 control-label">RELEASE REF. NO</label>
                   <div class="col-lg-4">
-                    <input type="text" id="releaseNo" name="releaseNo" class="form-control" placeholder="RELEASE NO.">
+                    <input type="text" id="release_ref_no" name="release_ref_no" class="form-control" placeholder="RELEASE NO.">
                   </div>
                 </div>
               </div>
@@ -159,6 +159,53 @@
               </div>
               <!--}}}-->
             </form>
+          </div>
+        </div>
+        <hr>
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 submit-form">
+            <form class="form-inline"  id="offHireFormQueryByDate" name="offHireFormQueryByDate" action="offHire" method="post">
+              <div class="form-group">
+                <div class="input-group input-daterange">
+                  <input type="text" class="form-control" id="start_date" name="start_date" placeholder="START DATE" data-date-format="yyyy/mm/dd">
+                  <div class="input-group-addon">TO</div>
+                  <input type="text" class="form-control" id="end_date" name="end_date" placeholder="END DATE" data-date-format="yyyy/mm/dd">
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary" id="query_by_date">查詢</button>
+            </form>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 data-table">
+            <div>
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>CONTAINER NO.</th>
+                    <th>TYPE</th>
+                    <th>DESTINATION</th>
+                    <th>LESSOR DEPOT</th>
+                    <th>TRANSACTION TIME</th>
+                    <th>RELEASE REF. NO</th>
+                    <th>LEASE COMPANY</th>
+                  </tr>
+                </thead>
+                <tbody>
+                <% container_data.forEach(function(_containerItem) {%>
+                  <tr>
+                    <td><%= _containerItem.CONTAINER_NO %></td>
+                    <td><%= _containerItem.CONTAINER_TYPE %></td>
+                    <td><%= _containerItem.DESTINATION %></td>
+                    <td><%= _containerItem.LESSOR_DEPOT %></td>
+                    <td><%= _containerItem.TRANSACTION_TIME %></td>
+                    <td><%= _containerItem.RELEASE_REF_NO %></td>
+                    <td><%= _containerItem.LEASE_COMPANY %></td>
+                  </tr>
+                <% });%>
+                </tbody>
+              </table>
+            </div>
           </div>
         </div>
       </div>
