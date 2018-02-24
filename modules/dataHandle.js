@@ -1,4 +1,5 @@
 var db = require('../db.js');
+var moment = require('../node_modules/moment/moment');
 
 exports.create = function() {
     
@@ -19,6 +20,7 @@ exports.insertContainerInfo = function(_containerInfo, _done) {
     _containerInfo.type,
     _containerInfo.hds_lease_ref,
     _containerInfo.loading_port,
+    _containerInfo.port,
     _containerInfo.lessor_depot,
     _containerInfo.transaction_time,
     _containerInfo.lease_company,
@@ -46,11 +48,13 @@ exports.insertContainerInfo = function(_containerInfo, _done) {
     _containerInfo.discharge_port,
     _containerInfo.carrier_id,
     _containerInfo.acceptance_ref,
+    _containerInfo.container_from,
+    _containerInfo.container_to,
     _containerInfo.container_status,
     _containerInfo.data_seq
   ];
   
-  db.get().query('INSERT INTO CONTAINER_INFO (CONTAINER_NO, CONTAINER_TYPE, HDS_LEASE_REF, LOADING_PORT, LESSOR_DEPOT, TRANSACTION_TIME, LEASE_COMPANY, HDS_DEPOT, DEPOT, SHIPPER, FORWARDEF, BOOKING_REF_NO, HAULER_CO, RELEASE_REF_NO, FULL_EMPTY, SEAL_NO, OWNER_TYPE, PHYSICAL_STATUS, DESTINATION, VESSEL, VOYAGE, B_L_NO, CONSIGNEE, NOTIFY, WEIGHT, BAY, SLOT, CARRIER_TYPE, DISCHARGE_PORT, CARRIER_ID, ACCEPTANCE_REF, CONTAINER_STATUS, DATA_SEQ, INSERT_DATE) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW()) ', _values, function(_err, _result){ if (_err) {
+  db.get().query('INSERT INTO CONTAINER_INFO (CONTAINER_NO, CONTAINER_TYPE, HDS_LEASE_REF, LOADING_PORT, PORT, LESSOR_DEPOT, TRANSACTION_TIME, LEASE_COMPANY, HDS_DEPOT, DEPOT, SHIPPER, FORWARDEF, BOOKING_REF_NO, HAULER_CO, RELEASE_REF_NO, FULL_EMPTY, SEAL_NO, OWNER_TYPE, PHYSICAL_STATUS, DESTINATION, VESSEL, VOYAGE, B_L_NO, CONSIGNEE, NOTIFY, WEIGHT, BAY, SLOT, CARRIER_TYPE, DISCHARGE_PORT, CARRIER_ID, ACCEPTANCE_REF, CONTAINER_FROM, CONTAINER_TO, CONTAINER_STATUS, DATA_SEQ, INSERT_DATE) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW()) ', _values, function(_err, _result){ if (_err) {
       console.log(_values);
       console.log(_err);
       return _done('Indsert error.');
@@ -85,6 +89,21 @@ exports.queryDataByDate = function(_containerStatus, _startDate, _endDate,_done)
     if (err) {
       return _done(err);
     }
+    _done(null, rows);
+  });
+};
+
+exports.queryDataByContainerNo = function(_containerNo, _done) {
+  var _values = [_containerNo];
+  db.get().query('SELECT * FROM CONTAINER_INFO WHERE CONTAINER_NO = ?', _values, function(err, rows){
+    if (err) {
+      return _done(err);
+    }
+    for (var row in rows) {
+      var _insertDate = rows[row].INSERT_DATE;
+      rows[row].INSERT_DATE = moment(_insertDate).format('YYYY/MM/DD hh:mm:ss');
+    }
+    console.log(rows);
     _done(null, rows);
   });
 };

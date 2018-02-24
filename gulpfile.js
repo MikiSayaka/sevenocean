@@ -41,7 +41,9 @@ gulp.task('concatLibJs', function(){
     './node_modules/startbootstrap-sb-admin-2-gh-pages/vendor/metisMenu/metisMenu.js',
     './node_modules/startbootstrap-sb-admin-2-gh-pages/dist/js/sb-admin-2.js',
     './node_modules/moment/moment.js',
-    './node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.js'
+    './node_modules/bootstrap-datepicker/dist/js/bootstrap-datepicker.js',
+    './node_modules/vue/dist/vue.js',
+    './node_modules/axios/dist/axios.js',
   ]).pipe(concat('lib.js')).pipe(gulp.dest(js_dest_path));
 });
 

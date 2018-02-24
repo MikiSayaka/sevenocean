@@ -40,3 +40,8 @@ hr {
   white-space: nowrap;
 }
 /*}}}*/
+/*{{{ 首頁表格  */
+.top-table {
+  margin-top: 20px;
+}
+/*}}}*/

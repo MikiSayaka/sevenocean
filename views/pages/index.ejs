@@ -8,7 +8,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/">七海航運</a>
+        <a class="navbar-brand" href="/">七洋航運</a>
       </div>
       <!--{{{ Top message bar, comment it. -->
       <!--
@@ -73,7 +73,62 @@
       <% include common/sidebar-include %>
     </nav>
     <div id="page-wrapper">
-      Index
+      <div class="row">
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 data-table">
+          <div>
+            <table class="table table-bordered top-table">
+              <thead>
+                <tr>
+                  <th>&nbsp;</th>
+                  <th>INSERT DATE</th>
+                  <th>CONTAINER NO.</th>
+                  <th>TYPE</th>
+                  <th>HDS LEASE REF</th>
+                  <th>LOADING PORT</th>
+                  <th>LESSOR DEPOT</th>
+                  <th>TRANSACTION TIME</th>
+                  <th>LEASE COMPANY</th>
+                  <th>PORT</th>
+                  <th>FULL / EMPTY</th>
+                  <th>VOYAGE</th>
+                  <th>VESSEL</th>
+                  <th>DISCHARGE PORT</th>
+                  <th>DESTINATION</th>
+                  <th>RELEASE REF. NO</th>
+                  <th>LEASE COMPANY</th>
+                  <th>FROM</th>
+                  <th>TO</th>
+                </tr>
+              </thead>
+              <tbody>
+              <% container_data.forEach(function(_containerItem) {%>
+                <tr>
+                  <td class="container-status text-nowrap"><%= _containerItem.CONTAINER_STATUS %></td>
+                  <td class="text-nowrap"><%= _containerItem.INSERT_DATE %></td>
+                  <td><%= _containerItem.CONTAINER_NO %></td>
+                  <td><%= _containerItem.CONTAINER_TYPE %></td>
+                  <td><%= _containerItem.HDS_LEASE_REF %></td>
+                  <td><%= _containerItem.LOADING_PORT %></td>
+                  <td><%= _containerItem.LESSOR_DEPOT %></td>
+                  <td><%= _containerItem.TRANSACTION_TIME %></td>
+                  <td><%= _containerItem.LEASE_COMPANY %></td>
+                  <td><%= _containerItem.PORT %></td>
+                  <td><%= _containerItem.FULL_EMPTY %></td>
+                  <td><%= _containerItem.VOYAGE %></td>
+                  <td><%= _containerItem.VESSEL %></td>
+                  <td><%= _containerItem.DISCHARGE_PORT %></td>
+                  <td><%= _containerItem.DESTINATION %></td>
+                  <td><%= _containerItem.RELEASE_REF_NO %></td>
+                  <td><%= _containerItem.LEASE_COMPANY %></td>
+                  <td><%= _containerItem.CONTAINER_FROM %></td>
+                  <td><%= _containerItem.CONTAINER_TO %></td>
+                </tr>
+              <% });%>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 <% include common/foot-include %>

@@ -2,27 +2,34 @@
           <div class="sidebar-nav navbar-collapse">
             <ul class="nav in" id="side-menu">
               <li class="sidebar-search">
-                <div class="input-group custom-search-form">
-                  <input class="form-control" placeholder="Search..." type="text">
-                  <span class="input-group-btn">
-                    <button class="btn btn-default" type="button">&nbsp;<i class="fa fa-search"></i>&nbsp;</button>
-                  </span>
-                </div>
+                <form action="/" method="post" id="container_search">
+                  <div class="input-group custom-search-form">
+                    <input class="form-control" placeholder="Search..." type="text" name="container_id" id="container_id">
+                    <span class="input-group-btn">
+                      <button class="btn btn-default" type="submit">&nbsp;<i class="fa fa-search"></i>&nbsp;</button>
+                    </span>
+                  </div>
+                </form>
               </li>
               <li><a href="onHire"><i class="fa fa-plane fa-fw"></i> ON HIRE</a></li>
               <li><a href="releaseToShipper"><i class="fa fa-share fa-fw"></i> RELEASE TO SHIPPER</a></li>
-              <li><a href="returnToShipper"><i class="fa fa-reply fa-fw"></i> RETURN TO SHIPPER</a></li>
+              <li><a href="returnFromShipper"><i class="fa fa-reply fa-fw"></i> RETURN FROM SHIPPER</a></li>
               <li><a href="loadOnBoard"><i class="fa fa-spinner fa-fw"></i> LOAD ON BOARD</a></li>
               <li><a href="discharge"><i class="fa fa-cart-arrow-down fa-fw"></i> DISCHARGE</a></li>
-              <li><a href="deliverToConsignee"><i class="fa fa-truck fa-fw"></i> DELIVERY TO CONSIGNEE</a></li>
+              <li><a href="deliverFromConsignee"><i class="fa fa-truck fa-fw"></i> DELIVERY FROM CONSIGNEE</a></li>
+              <!--
               <li><a href="strip"><i class="fa fa-wrench fa-fw"></i> STRIP</a></li>
-              <li><a href="returnToConsignee"><i class="fa fa-list fa-fw"></i> RETURN TO CONSIGNEE</a></li>
-              <li><a href="offHire"><i class="fa fa-list fa-fw"></i> OFF HIRE</a></li>
+              -->
+              <li><a href="returnFromConsignee"><i class="fa fa-reply fa-fw"></i> RETURN FROM CONSIGNEE</a></li>
+              <li><a href="offHire"><i class="fa fa-ban fa-fw"></i> OFF HIRE</a></li>
+              <li><a href="emptyPosition"><i class="fa fa-ship fa-fw"></i> EMPTY POSITION</a></li>
+              <!--
               <li><a href="loadOnTrainAndTruck"><i class="fa fa-train fa-fw"></i> LOAD ON TRAIN / TRUCK</a></li>
               <li><a href="dischargeOnTrainAndTruck"><i class="fa fa-train fa-fw"></i> DISCHARGE ON TRAIN / TRUCK</a></li>
               <li><a href="cfsStuff"><i class="fa fa-refresh fa-fw"></i> CFS STUFF</a></li>
               <li><a href="emptyGateIn"><i class="fa fa-sign-in fa-fw"></i> EMPTY GATE IN</a></li>
               <li><a href="emptyGateOut"><i class="fa fa-sign-out fa-fw"></i> EMPTY GATE OUT</a></li>
+              -->
             </ul>
           </div>
         </div>

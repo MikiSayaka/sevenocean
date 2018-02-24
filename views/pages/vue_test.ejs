@@ -1,0 +1,41 @@
+<% include common/head-include %>
+  <div id="wrapper">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <dl>
+                    <dt>基礎宣告</dt>
+                    <dd>
+                        <div>{{ message }}</div>
+                    </dd>
+                    <dt>綁定HTML attribute</dt>
+                    <dd>
+                        <span v-bind:title="attribute_message">鼠标悬停几秒钟查看此处动态绑定的提示信息！</span>
+                    </dd>
+                    <dt>條件</dt>
+                    <dd>
+                        <p v-if="seen">现在你看到我了</p>
+                    </dd>
+                    <dt>迴圈</dt>
+                    <dd>
+                        <ol>
+                            <li v-for="todo in todos">{{ todo.text }}</li>
+                        </ol>
+                    </dd>
+                    <dt>处理用户输入</dt>
+                    <dd>
+                        <button v-on:click="reverseMessage">逆转消息</button>
+                        <p>{{ reverseMsg }}</p>
+                        <input v-model="inputMsg">
+                        <p>{{ inputMsg }}</p>
+                    </dd>
+                    <dt>Ajax呼叫</dt>
+                    <dd>
+                        <button v-on:click="getData">請呼叫</button>
+                    </dd>
+                </dl>
+            </div>
+        </div>
+    </div>
+  </div>
+<% include common/foot-include-test %>

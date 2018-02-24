@@ -8,7 +8,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="/">七海航運</a>
+          <a class="navbar-brand" href="/">七洋航運</a>
         </div>
         <!--{{{ Top message bar, comment it. -->
         <!--
@@ -75,12 +75,12 @@
       <div id="page-wrapper">
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <h1 class="page-header">RETRUN TO SHIPPER</h1>
+            <h1 class="page-header">RETRUN FROM SHIPPER</h1>
           </div>
         </div>
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-            <form class="form-horizontal container-form" id="returnToShipperForm" name="returnToShipperForm" action="returnToShipper" method="post">
+            <form class="form-horizontal container-form" id="returnFromShipperForm" name="returnFromShipperForm" action="returnFromShipper" method="post">
               <!--{{{-->
               <div class="row">
                 <div class="form-group col-lg-6">
@@ -99,21 +99,24 @@
               <!--}}}-->
               <!--{{{-->
               <div class="row">
+                <!--
                 <div class="form-group col-lg-6">
                   <label for="full_empty" class="col-lg-4 control-label">FULL / EMPTY</label>
                   <div class="col-lg-4">
                     <input type="text" id="full_empty" name="full_empty" class="form-control" placeholder="FULL / EMPTY">
                   </div>
                 </div>
-                <div class="form-group col-lg-6 col-lg-pull-2">
-                  <label for="loading_port" class="col-lg-4 control-label">LOADING PORT</label>
+                -->
+                <div class="form-group col-lg-6">
+                  <label for="loading_port" class="col-lg-4 control-label">PORT</label>
                   <div class="col-lg-4">
-                    <input type="text" id="loading_port" name="loading_port" class="form-control" placeholder="LOADING PORT">
+                    <input type="text" id="port" name="port" class="form-control" placeholder="PORT">
                   </div>
                 </div>
               </div>
               <!--}}}-->
               <!--{{{-->
+              <!--
               <div class="row">
                 <div class="form-group col-lg-6">
                   <label for="transaction_time" class="col-lg-4 control-label">TRANSACTION TIME</label>
@@ -122,8 +125,10 @@
                   </div>
                 </div>
               </div>
+              -->
               <!--}}}-->
               <!--{{{-->
+              <!--
               <div class="row">
                 <div class="form-group col-lg-6">
                   <label for="shipper" class="col-lg-4 control-label">SHIPPER</label>
@@ -132,8 +137,10 @@
                   </div>
                 </div>
               </div>
+              -->
               <!--}}}-->
               <!--{{{-->
+              <!--
               <div class="row">
                 <div class="form-group col-lg-6">
                   <label for="forwardef" class="col-lg-4 control-label">FORWARDEF</label>
@@ -142,8 +149,10 @@
                   </div>
                 </div>
               </div>
+              -->
               <!--}}}-->
               <!--{{{-->
+              <!--
               <div class="row">
                 <div class="form-group col-lg-6">
                   <label for="booking_ref_no" class="col-lg-4 control-label">BOOKING REF. NO</label>
@@ -152,8 +161,10 @@
                   </div>
                 </div>
               </div>
+              -->
               <!--}}}-->
               <!--{{{-->
+              <!--
               <div class="row">
                 <div class="form-group col-lg-6">
                   <label for="seal_no" class="col-lg-4 control-label">SEAL NO.</label>
@@ -162,8 +173,10 @@
                   </div>
                 </div>
               </div>
+              -->
               <!--}}}-->
               <!--{{{-->
+              <!--
               <div class="row">
                 <div class="form-group col-lg-6">
                   <label for="owner_type" class="col-lg-4 control-label">OWNER TYPE</label>
@@ -178,6 +191,7 @@
                   </div>
                 </div>
               </div>
+              -->
               <!--}}}-->
               <!--{{{-->
               <div class="row">
@@ -196,7 +210,7 @@
         <hr>
         <div class="row">
           <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 submit-form">
-            <form class="form-inline"  id="returnToShipperFormQueryByDate" name="returnToShipperFormQueryByDate" action="returnToShipper" method="post">
+            <form class="form-inline"  id="returnFromShipperFormQueryByDate" name="returnFromShipperFormQueryByDate" action="returnFromShipper" method="post">
               <div class="form-group">
                 <div class="input-group input-daterange">
                   <input type="text" class="form-control" id="start_date" name="start_date" placeholder="START DATE" data-date-format="yyyy/mm/dd">
@@ -216,8 +230,11 @@
                   <tr>
                     <th>CONTAINER NO.</th>
                     <th>TYPE</th>
+                    <!--
                     <th>FULL / EMPTY</th>
-                    <th>LOADING PORT</th>
+                    -->
+                    <th>PORT</th>
+                    <!--
                     <th>TRANSACTION TIME</th>
                     <th>SHIPPER</th>
                     <th>FORWARDEF</th>
@@ -225,6 +242,7 @@
                     <th>SEAL NO.</th>
                     <th>OWNER TYPE</th>
                     <th>PHYSICAL STATUS</th>
+                    -->
                   </tr>
                 </thead>
                 <tbody>
@@ -232,8 +250,11 @@
                   <tr>
                     <td><%= _containerItem.CONTAINER_NO %></td>
                     <td><%= _containerItem.CONTAINER_TYPE %></td>
+                    <!--
                     <td><%= _containerItem.FULL_EMPTY %></td>
-                    <td><%= _containerItem.LOADING_PORT %></td>
+                    -->
+                    <td><%= _containerItem.PORT %></td>
+                    <!--
                     <td><%= _containerItem.TRANSACTION_TIME %></td>
                     <td><%= _containerItem.SHIPPER %></td>
                     <td><%= _containerItem.FORWARDEF %></td>
@@ -241,6 +262,7 @@
                     <td><%= _containerItem.SEAL_NO %></td>
                     <td><%= _containerItem.OWNER_TYPE %></td>
                     <td><%= _containerItem.PHYSICAL_STATUS %></td>
+                    -->
                   </tr>
                 <% });%>
                 </tbody>

@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 var ejs = require('ejs');
 
 var paths = require('./routes/paths');
+var apiPath = require('./routes/apiPath');
 var db = require('./db');
 
 var app = express();
@@ -16,7 +17,7 @@ app.set('view engine', 'ejs');
 
 //  uncomment after placing your favicon in /public
 //  app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
-app.use(logger('dev'))
+app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
@@ -37,18 +38,21 @@ db.connect(db.TEST_DB, function(err){
 app.use('/', paths);
 app.use('/onHire', paths);
 app.use('/releaseToShipper', paths);
-app.use('/returnToShipper', paths);
+app.use('/returnFromShipper', paths);
 app.use('/loadOnBoard', paths);
 app.use('/discharge', paths);
-app.use('/deliverToConsignee', paths);
-app.use('/strip', paths);
-app.use('/returnToConsignee', paths);
+app.use('/deliverFromConsignee', paths);
+//  app.use('/strip', paths);
+app.use('/returnFromConsignee', paths);
 app.use('/offHire', paths);
-app.use('/loadOnTrainAndTruck', paths);
-app.use('/dischargeOnTrainAndTruck', paths);
-app.use('/cfsStuff', paths);
-app.use('/emptyGateIn', paths);
-app.use('/emptyGateOut', paths);
+app.use('/emptyPosition', paths);
+//  app.use('/loadOnTrainAndTruck', paths);
+//  app.use('/dischargeOnTrainAndTruck', paths);
+//  app.use('/cfsStuff', paths);
+//  app.use('/emptyGateIn', paths);
+//  app.use('/emptyGateOut', paths);
+app.use('/vue_test', paths);
+app.use('/getApi', apiPath);
 
 //  catch 404 and forward to error handler
 app.use(function(req, res, next) {
