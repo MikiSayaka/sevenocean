@@ -79,5 +79,26 @@ var app = new Vue({
             $('#start_date').datepicker('update', _endDate.toDate());
         }
     });
+    
+    $('#page-wrapper .form-horizontal input[type=text]').keydown(function(e){
+      var _this = $(this);
+      if (e.which == 13) {
+        var _inputs = _this.closest('form').find(':input');
+        var _nextEl = _inputs.eq(_inputs.index(_this) + 1);
+        if (_nextEl.is('input')) {
+          _nextEl.focus();
+          e.preventDefault();
+        }
+      }
+    });
+    
+    //  TODO  變更首頁表單的貨櫃狀態名稱
+    var _statusTr = $('.container-status');
+    if (_statusTr.length > 0) {
+      $.each(_statusTr, function(_key, _item){
+        var _$item = $(_item);
+        _$item.text($(`#side-menu a[href=${ _$item.text() }]`).text());
+      });
+    }
   }
 })
