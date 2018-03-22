@@ -86,13 +86,13 @@
                 <div class="form-group col-lg-6">
                   <label for="container_no" class="col-lg-4 control-label">CONTAINER NO.</label>
                   <div class="col-lg-4">
-                    <input type="text" id="container_no" name="container_no" class="form-control" placeholder="CONTAINER NO.">
+                    <input type="text" id="container_no" name="container_no" class="form-control" placeholder="CONTAINER NO." v-on:keydown="nextInput" v-on:blur="checkContainerNo">
                   </div>
                 </div>
                 <div class="form-group col-lg-6 col-lg-pull-2">
                   <label for="type" class="col-lg-4 control-label">TYPE</label>
                   <div class="col-lg-4">
-                    <input type="text" id="type" name="type" class="form-control" placeholder="TYPE">
+                    <input type="text" id="type" name="type" class="form-control" placeholder="TYPE" v-on:keydown="nextInput">
                   </div>
                 </div>
               </div>
@@ -102,13 +102,13 @@
                 <div class="form-group col-lg-6">
                   <label for="hds_lease_ref" class="col-lg-4 control-label">HDS LEASE REF</label>
                   <div class="col-lg-4">
-                    <input type="text" id="hds_lease_ref" name="hds_lease_ref" class="form-control" placeholder="HDS LEASE REF">
+                    <input type="text" id="hds_lease_ref" name="hds_lease_ref" class="form-control" placeholder="HDS LEASE REF" v-on:keydown="nextInput">
                   </div>
                 </div>
                 <div class="form-group col-lg-6 col-lg-pull-2">
                   <label for="loading_port" class="col-lg-4 control-label">LOADING PORT</label>
                   <div class="col-lg-4">
-                    <input type="text" id="loading_port" name="loading_port" class="form-control" placeholder="LOADING PORT">
+                    <input type="text" id="loading_port" name="loading_port" class="form-control" placeholder="LOADING PORT" v-on:keydown="nextInput">
                   </div>
                 </div>
               </div>
@@ -118,7 +118,7 @@
                 <div class="form-group col-lg-6">
                   <label for="lessor_depot" class="col-lg-4 control-label">LESSOR DEPOT</label>
                   <div class="col-lg-4">
-                    <input type="text" id="lessor_depot" name="lessor_depot" class="form-control" placeholder="LESSOR DEPOT">
+                    <input type="text" id="lessor_depot" name="lessor_depot" class="form-control" placeholder="LESSOR DEPOT" v-on:keydown="nextInput">
                   </div>
                 </div>
               </div>
@@ -128,7 +128,7 @@
                 <div class="form-group col-lg-6">
                   <label for="transaction_time" class="col-lg-4 control-label">TRANSACTION TIME</label>
                   <div class="col-lg-4">
-                    <input type="text" id="transaction_time" name="transaction_time" class="form-control" placeholder="TRANSACTION TIME">
+                    <input type="text" id="transaction_time" name="transaction_time" class="form-control" placeholder="TRANSACTION TIME" v-on:keydown="nextInput">
                   </div>
                 </div>
               </div>
@@ -138,7 +138,7 @@
                 <div class="form-group col-lg-6">
                   <label for="lease_company" class="col-lg-4 control-label">LEASE COMPANY</label>
                   <div class="col-lg-4">
-                    <input type="text" id="lease_company" name="lease_company" class="form-control" placeholder="LEASE COMPANY">
+                    <input type="text" id="lease_company" name="lease_company" class="form-control" placeholder="LEASE COMPANY" v-on:keydown="nextInput">
                   </div>
                 </div>
               </div>
@@ -149,7 +149,7 @@
                 <div class="form-group col-lg-6">
                   <label for="hds_depot" class="col-lg-4 control-label">HDS DEPOT</label>
                   <div class="col-lg-4">
-                    <input type="text" id="hds_depot" name="hds_depot" class="form-control" placeholder="HDS DEPOT">
+                    <input type="text" id="hds_depot" name="hds_depot" class="form-control" placeholder="HDS DEPOT" v-on:keydown="nextInput">
                   </div>
                 </div>
               </div>

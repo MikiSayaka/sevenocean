@@ -20,11 +20,12 @@ router.post('/', function(req, res, next) {
   var _url = req.baseUrl;
   var _startDate = req.body.start_date;
   var _endDate = req.body.end_date;
-  var _containerNo = req.body.container_id;
+  var _containerId = req.body.container_id;
+  var _containerNo = req.body.container_no;
   
-  if ((_startDate != undefined && _endDate != undefined) || _containerNo != undefined) {
+  if ((_startDate != undefined && _endDate != undefined) || _containerId != undefined) {
     //  TODO  若參數中有開始和結束日期則根據連結判斷要查詢的分類
-    if (_containerNo == undefined) {
+    if (_containerId == undefined) {
       //  TODO  沒有櫃號,根據時間區間查詢
       var _momentStart = moment(_startDate);
       var _momentEnd = moment(_endDate);
@@ -45,7 +46,7 @@ router.post('/', function(req, res, next) {
       }
     } else {
       //  根據櫃號查詢
-      data.queryDataByContainerNo(_containerNo, function(_flag, _data){
+      data.queryDataByContainerNo(_containerId, function(_flag, _data){
         var _responseData = JSON.parse(JSON.stringify(_data));
         res.render('pages' + _url, {
           container_data: _responseData
@@ -54,12 +55,21 @@ router.post('/', function(req, res, next) {
     }
   } else {
     //  TODO  若參數中沒有開始和結束日期或是沒有櫃號則將資料寫入
-    _insertData(req, _url, function(_data){
-      var _responseData = JSON.parse(JSON.stringify(_data));
-      res.render('pages' + _url, {
-        container_data: _responseData
+    if (_containerNo != undefined) {
+      _insertData(req, _url, function(_data){
+        var _responseData = JSON.parse(JSON.stringify(_data));
+        res.render('pages' + _url, {
+          container_data: _responseData
+        });
       });
-    });
+    } else {
+      data.queryData(_url.replace('/', ''), function(_flag, _data){
+        var _responseData = JSON.parse(JSON.stringify(_data));
+        res.render('pages' + _url, {
+          container_data: _responseData
+        });
+      });
+    }
   }
 });
 

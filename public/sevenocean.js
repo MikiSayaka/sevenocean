@@ -54,6 +54,21 @@ var app = new Vue({
   data: {
   },
   methods: {
+    nextInput: function(e) {
+      var _keyCode = e.keyCode;
+      var _this = $(e.target);
+      if (_keyCode === 13) {
+        var _inputs = _this.closest('form').find(':input');
+        var _nextEl = _inputs.eq(_inputs.index(_this) + 1);
+        if (_nextEl.is('input')) {
+          _nextEl.focus();
+          e.preventDefault();
+        }
+      }
+    },
+    checkContainerNo: function(e) {
+      var _this = $(e.target);
+    }
   },
   mounted: function() {
     $('#start_date, #end_date').datepicker({
@@ -78,18 +93,6 @@ var app = new Vue({
         if (_endDate.isBefore(_startDate, 'date')) {
             $('#start_date').datepicker('update', _endDate.toDate());
         }
-    });
-    
-    $('#page-wrapper .form-horizontal input[type=text]').keydown(function(e){
-      var _this = $(this);
-      if (e.which == 13) {
-        var _inputs = _this.closest('form').find(':input');
-        var _nextEl = _inputs.eq(_inputs.index(_this) + 1);
-        if (_nextEl.is('input')) {
-          _nextEl.focus();
-          e.preventDefault();
-        }
-      }
     });
     
     //  TODO  變更首頁表單的貨櫃狀態名稱
