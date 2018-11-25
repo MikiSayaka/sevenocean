@@ -54,7 +54,8 @@ exports.insertContainerInfo = function(_containerInfo, _done) {
     _containerInfo.data_seq
   ];
   
-  db.get().query('INSERT INTO CONTAINER_INFO (CONTAINER_NO, CONTAINER_TYPE, HDS_LEASE_REF, LOADING_PORT, PORT, LESSOR_DEPOT, TRANSACTION_TIME, LEASE_COMPANY, HDS_DEPOT, DEPOT, SHIPPER, FORWARDEF, BOOKING_REF_NO, HAULER_CO, RELEASE_REF_NO, FULL_EMPTY, SEAL_NO, OWNER_TYPE, PHYSICAL_STATUS, DESTINATION, VESSEL, VOYAGE, B_L_NO, CONSIGNEE, NOTIFY, WEIGHT, BAY, SLOT, CARRIER_TYPE, DISCHARGE_PORT, CARRIER_ID, ACCEPTANCE_REF, CONTAINER_FROM, CONTAINER_TO, CONTAINER_STATUS, DATA_SEQ, INSERT_DATE) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW()) ', _values, function(_err, _result){ if (_err) {
+  db.get().query('INSERT INTO CONTAINER_INFO (CONTAINER_NO, CONTAINER_TYPE, HDS_LEASE_REF, LOADING_PORT, PORT, LESSOR_DEPOT, TRANSACTION_TIME, LEASE_COMPANY, HDS_DEPOT, DEPOT, SHIPPER, FORWARDEF, BOOKING_REF_NO, HAULER_CO, RELEASE_REF_NO, FULL_EMPTY, SEAL_NO, OWNER_TYPE, PHYSICAL_STATUS, DESTINATION, VESSEL, VOYAGE, B_L_NO, CONSIGNEE, NOTIFY, WEIGHT, BAY, SLOT, CARRIER_TYPE, DISCHARGE_PORT, CARRIER_ID, ACCEPTANCE_REF, CONTAINER_FROM, CONTAINER_TO, CONTAINER_STATUS, DATA_SEQ, INSERT_DATE) VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, NOW()) ', _values, function(_err, _result){
+    if (_err) {
       console.log(_values);
       console.log(_err);
       return _done('Indsert error.');
@@ -83,7 +84,7 @@ exports.queryData = function(_containerStatus, _done) {
   });
 };
 
-exports.queryDataByDate = function(_containerStatus, _startDate, _endDate,_done) {
+exports.queryDataByDate = function(_containerStatus, _startDate, _endDate, _done) {
   var _values = [_startDate, _endDate, _containerStatus];
   db.get().query('SELECT * FROM CONTAINER_INFO WHERE INSERT_DATE BETWEEN ? AND ? AND CONTAINER_STATUS = ?', _values, function(err, rows){
     if (err) {
@@ -95,15 +96,16 @@ exports.queryDataByDate = function(_containerStatus, _startDate, _endDate,_done)
 
 exports.queryDataByContainerNo = function(_containerNo, _done) {
   var _values = [_containerNo];
-  db.get().query('SELECT * FROM CONTAINER_INFO WHERE CONTAINER_NO = ?', _values, function(err, rows){
+  db.get().query('SELECT CONTAINER_TYPE FROM CONTAINER_INFO WHERE CONTAINER_NO = ?', _values, function(err, rows){
     if (err) {
       return _done(err);
     }
-    for (var row in rows) {
-      var _insertDate = rows[row].INSERT_DATE;
-      rows[row].INSERT_DATE = moment(_insertDate).format('YYYY/MM/DD hh:mm:ss');
-    }
-    console.log(rows);
+    
+    //  for (var row in rows) {
+    //    var _insertDate = rows[row].INSERT_DATE;
+    //    rows[row].INSERT_DATE = moment(_insertDate).format('YYYY/MM/DD hh:mm:ss');
+    //  }
+    
     _done(null, rows);
   });
 };

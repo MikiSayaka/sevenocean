@@ -84,14 +84,14 @@ var app = new Vue({
           $('#end_date').datepicker('update', _startDate.toDate());
         }
     });
-    
+  
     $('#end_date').on('changeDate', function(e){
         var _this = $(this);
         var _startDate = $('#start_date').val();
-        var _endDate = moment(_this.val());
+        var _endDate = moment(_this.val())
         
         if (_endDate.isBefore(_startDate, 'date')) {
-            $('#start_date').datepicker('update', _endDate.toDate());
+          $('#start_date').datepicker('update', _endDate.toDate());
         }
     });
     
@@ -103,5 +103,44 @@ var app = new Vue({
         _$item.text($(`#side-menu a[href=${ _$item.text() }]`).text());
       });
     }
+    
+    //  TODO  輸入完貨櫃編號後帶出TYPE
+    //  Unfocus container no and loading type
+    //  SELECT CONTAINER_NO FORM CONTAINER_INFO WHERE CONTAINER_NO = '';
+    $('#container_no').focusout(function(){
+      var _this = $(this);
+      ajaxCall({
+        url: '/getApi/getContainerType',
+        method: 'POST',
+        type: 'json',
+        data: {
+          'container_no': _this.val()
+        },
+        success: function(_data, _status){
+          if (_data.length > 0) {
+            $('#type').val(_data[0].CONTAINER_TYPE);
+          }
+        },
+        error: function(_data, _status, _error){},
+        downFunc: function(){}
+      });
+    });
   }
-})
+});
+
+function ajaxCall(_config) {
+  if (_config != null && _config.url != undefined && _config.url != '') {
+    $.ajax({
+      url: _config.url,
+      method: _config.method,
+      dataType: _config.type,
+      data: _config.data,
+      success: _config.success,
+      error: _config.error
+    }).done(function(_status, _rst){
+      if (_config.downFunc) {
+        _config.downFunc();
+      }
+    });
+  }
+}
