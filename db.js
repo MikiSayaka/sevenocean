@@ -13,8 +13,8 @@ exports.WRITE = 'write';
 exports.connect = function(mode, done) {
   state.pool = mysql.createPool({
     host: 'localhost',
-    user: 'a8965128',
-    password: '',
+    user: 'sevenocean',
+    password: '1qaz2wsx',
     database: TEST_DB,
     charset: 'utf8'
   });
