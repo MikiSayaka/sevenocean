@@ -49,32 +49,35 @@ var app = new Vue({
       //  aphu4517446
     },
     formChecked: function(e) {
-      e.preventDefault();
+      //  FIXME check form and go on.
+      if ($(e.currentTarget).has('.has-error').length > 0) {
+        e.preventDefault();
+      }
     }
   },
   mounted: function() {
     $('#start_date, #end_date').datepicker({
-        autoclose: true
+      autoclose: true
     });
     
     $('#start_date').on('changeDate', function(e){
-        var _this = $(this);
-        var _startDate = moment(_this.val());
-        var _endDate = $('#end_date').val();
-        
-        if (_startDate.isAfter(_endDate, 'date')) {
-          $('#end_date').datepicker('update', _startDate.toDate());
-        }
+      var _this = $(this);
+      var _startDate = moment(_this.val());
+      var _endDate = $('#end_date').val();
+      
+      if (_startDate.isAfter(_endDate, 'date')) {
+        $('#end_date').datepicker('update', _startDate.toDate());
+      }
     });
   
     $('#end_date').on('changeDate', function(e){
-        var _this = $(this);
-        var _startDate = $('#start_date').val();
-        var _endDate = moment(_this.val())
-        
-        if (_endDate.isBefore(_startDate, 'date')) {
-          $('#start_date').datepicker('update', _endDate.toDate());
-        }
+      var _this = $(this);
+      var _startDate = $('#start_date').val();
+      var _endDate = moment(_this.val())
+      
+      if (_endDate.isBefore(_startDate, 'date')) {
+        $('#start_date').datepicker('update', _endDate.toDate());
+      }
     });
     
     //  TODO  變更首頁表單的貨櫃狀態名稱

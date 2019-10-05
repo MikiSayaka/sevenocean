@@ -186,10 +186,16 @@
               <!--{{{-->
               <div class="row">
                 <div class="form-group col-lg-6">
-                  <label for="container_no" class="col-lg-4 control-label">&nbsp;</label>
-                  <div class="col-lg-8">
-                    <button class="btn btn-primary" id="submit" type="submit">送出</button>
-                    <button class="btn btn-danger" id="reset" type="button">清空</button>
+                  <label class="col-lg-4 control-label">&nbsp;</label>
+                  <div class="col-lg-4">
+                    <button class="btn btn-primary" id="submit">送出</button>
+                    <button class="btn btn-danger" id="reset">清空</button>
+                  </div>
+                  <div class="col-lg-4">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="keepValue" value="keepValue">
+                      <label class="form-check-label" for="keepValue">Keep Value</label>
+                    </div>
                   </div>
                 </div>
               </div>
