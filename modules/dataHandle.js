@@ -100,12 +100,6 @@ exports.queryDataByContainerNo = function(_containerNo, _done) {
     if (err) {
       return _done(err);
     }
-    
-    //  for (var row in rows) {
-    //    var _insertDate = rows[row].INSERT_DATE;
-    //    rows[row].INSERT_DATE = moment(_insertDate).format('YYYY/MM/DD hh:mm:ss');
-    //  }
-    
     _done(null, rows);
   });
 };
