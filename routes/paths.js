@@ -58,16 +58,13 @@ router.post('/', function(req, res, next) {
     if (_containerNo != undefined) {
       _insertData(req, _url, function(_data){
         var _responseData = JSON.parse(JSON.stringify(_data));
+        console.log('****');
+        console.log(_responseData);
+        console.log('****');
         var _keepValueFlag = req.body.keepValue;
-        if (_keepValueFlag) {
-          res.render('pages' + _url, {
-            container_data: _responseData
-          });
-        } else {
-          res.render('pages' + _url, {
-            container_data: null
-          });
-        }
+        res.render('pages' + _url, {
+          container_data: _responseData
+        });
       });
     } else {
       data.queryData(_url.replace('/', ''), function(_flag, _data){
